@@ -1,0 +1,1071 @@
+=== Finset.prod_le_prod
+@Finset.prod_le_prod : ∀ {ι : Type u_1} {N : Type u_2} [inst : CommMonoid N] [inst_1 : Preorder N] {f g : ι → N}
+  {s : Finset ι} [MulLeftMono N], (∀ i ∈ s, f i ≤ g i) → ∏ i ∈ s, f i ≤ ∏ i ∈ s, g i
+=== RHActualCorrelation.log5_prime24_gap
+RHActualCorrelation.log5_prime24_gap : ∀
+  (f : ↥(MeasureTheory.Lp ℝ 2 (MeasureTheory.volume.restrict (Set.Icc (-(Real.log 5 / 2)) (Real.log 5 / 2))))),
+  2 * RHPrimeConstants.alpha (Real.log 2) * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 2) +
+      2 * RHPrimeConstants.beta (Real.log 2) * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 4) ≤
+    RHPrimeConstants.lam (Real.log 2) * ‖f‖ ^ 2 -
+      (RHPrimeConstants.lam (Real.log 2) - RHPrimeConstants.alpha (Real.log 2)) *
+        ‖f - RHRawProjection.projectLp (Real.log 5 / 2) (Real.log 2) RHPrimeConstants.ratio f‖ ^ 2
+=== RHActualPrime3.log5_prime3_bound
+RHActualPrime3.log5_prime3_bound : ∀
+  (f : ↥(MeasureTheory.Lp ℝ 2 (MeasureTheory.volume.restrict (Set.Icc (-(Real.log 5 / 2)) (Real.log 5 / 2))))),
+  2 * RHActualPrime3.mu3 * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 3) ≤
+    RHActualPrime3.mu3 * (‖f‖ ^ 2 - ‖RHCentralMultiplier.centralLp (Real.log 5 / 2) (Real.log 3) f‖ ^ 2)
+=== RHAffRed0516.OO_eq
+RHAffRed0516.OO_eq : ∀ (i k : ℕ) {s t : ℝ},
+  s < 2 →
+    t < 2 →
+      RHPairInt0516.OO i k s t =
+        (1 - (max s t - 1)) / 2 *
+          ∑ j ∈ Finset.range (i + 1),
+            RHPrAff0511.Af ((1 - (max s t - 1)) / 2) ((max s t - 1 + 1) / 2 - s) i j *
+                RHPrAff0511.Af ((1 - (max s t - 1)) / 2) ((max s t - 1 + 1) / 2 - t) k j *
+              (2 / (2 * ↑j + 1))
+=== RHAffRed0516.X_eq
+RHAffRed0516.X_eq : ∀ (i k : ℕ) {s t : ℝ},
+  s + t < 2 →
+    RHPairInt0516.X i k s t =
+      (1 - t - (s - 1)) / 2 *
+        ∑ j ∈ Finset.range (i + 1),
+          RHPrAff0511.Af ((1 - t - (s - 1)) / 2) ((s - 1 + (1 - t)) / 2 - s) i j *
+              RHPrAff0511.Af ((1 - t - (s - 1)) / 2) ((s - 1 + (1 - t)) / 2 + t) k j *
+            (2 / (2 * ↑j + 1))
+=== RHApproxPolynomial0520.approxPoly_degree
+RHApproxPolynomial0520.approxPoly_degree : ∀ n ≤ 63, (RHApproxPolynomial0520.approxPoly n).natDegree ≤ 127
+=== RHAssembly0525.assembly
+RHAssembly0525.assembly : RHInterface0524.AssemblyGoal
+=== RHAutocorrEnergy.autocorr_deficit
+@RHAutocorrEnergy.autocorr_deficit : ∀ {f : ℝ → ℝ},
+  Continuous f →
+    HasCompactSupport f →
+      ∀ (s : ℝ),
+        RH_LiteratureBridge.real_autocorr f 0 - RH_LiteratureBridge.real_autocorr f s =
+          1 / 2 * ∫ (t : ℝ), (f t - f (t - s)) ^ 2
+=== RHAutocorrEnergy.displacement_product_integrable
+@RHAutocorrEnergy.displacement_product_integrable : ∀ {f : ℝ → ℝ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 1 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        MeasureTheory.Integrable (fun p => RH_GammaFinalFormula.K_kernel |p.1| * (f p.2 - f (p.2 - p.1)) ^ 2)
+          (MeasureTheory.volume.prod MeasureTheory.volume)
+=== RHAutocorrEnergy.spatial_eq_displacement
+@RHAutocorrEnergy.spatial_eq_displacement : ∀ {f : ℝ → ℝ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 1 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) → RHAutocorrEnergy.spatialEnergy f = RHAutocorrEnergy.displacementEnergy f
+=== RHAutocorrEnergy.weighted_difference_integrable
+@RHAutocorrEnergy.weighted_difference_integrable : ∀ {f : ℝ → ℝ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 1 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        MeasureTheory.IntegrableOn (fun s => RH_GammaFinalFormula.K_kernel s * ∫ (t : ℝ), (f t - f (t - s)) ^ 2)
+          (Set.Ioi 0) MeasureTheory.volume
+=== RHAutocorrEnergy.whole_zero_eq_spatial
+@RHAutocorrEnergy.whole_zero_eq_spatial : ∀ {f : ℝ → ℝ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 1 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        (Zeta23.zetaZeroConfig.W (fun x => ↑(f x)) fun x => ↑(f x)).re =
+          (((1 / 4).digamma.re - Real.log Real.pi) * ∫ (x : ℝ), f x ^ 2) + RHAutocorrEnergy.spatialEnergy f +
+              RH_LiteratureBridge.P_pole (2 * L) (RH_LiteratureBridge.real_autocorr f) -
+            RH_LiteratureBridge.S_prime (RH_LiteratureBridge.real_autocorr f)
+=== RHBandNorm.band_far_norm
+RHBandNorm.band_far_norm : ∀ (o : Bool) (u : ℝ → ℝ),
+  RHConditionalLog5.Test u →
+    ∑ i, RHConditionalLog5.band o u i ^ 2 + ‖RHConditionalLog5.far o u‖ ^ 2 =
+      ‖RHConditionalLog5.embed (RHConditionalLog5.tail o u)‖ ^ 2
+=== RHBasisBound0520.basis_bound
+RHBasisBound0520.basis_bound : ∀ n ≤ 63,
+  ∀ {x : ℝ}, |x| ≤ RHLog5Bridge.halfWidth → |Polynomial.eval x (RHConditionalLog5.basisPoly n)| ≤ 9
+=== RHCaps0494.component_positive_caps
+RHCaps0494.component_positive_caps : ∀ (P : RHConditionalLog5.Parameters) (k : RHCaps0494.Caps),
+  RHConditionalLog5.G1 P →
+    RHConditionalLog5.G2 P →
+      RHConditionalLog5.G3 P →
+        RHConditionalLog5.G4 P →
+          RHCaps0494.G5c P k →
+            RHCaps0494.G6c P k →
+              ∀ (o : Bool) (u : ℝ → ℝ),
+                RHConditionalLog5.Test u →
+                  RHConditionalLog5.component o u ≠ 0 →
+                    0 < RHTargetFormBinding.targetQ_real (RHConditionalLog5.component o u)
+=== RHCaps0494.target_log5_of_G5c_G6c
+RHCaps0494.target_log5_of_G5c_G6c : ∀ (k : RHCaps0494.Caps),
+  RHCaps0494.G5c RHConcreteParameters.concrete k →
+    RHCaps0494.G6c RHConcreteParameters.concrete k →
+      ∀ (f : ℝ → ℂ),
+        ContDiff ℝ 2 f →
+          (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+            f ≠ 0 → (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ) ∧ 0 < (Zeta23.zetaZeroConfig.W f f).re
+=== RHCentralMass.log5_lp_mass
+RHCentralMass.log5_lp_mass : ∀
+  (f : ↥(MeasureTheory.Lp ℝ 2 (MeasureTheory.volume.restrict (Set.Icc (-(Real.log 5 / 2)) (Real.log 5 / 2))))),
+  ‖RHCentralMultiplier.centralLp (Real.log 5 / 2) (Real.log 3)
+          (RHRawProjection.projectLp (Real.log 5 / 2) (Real.log 2) RHPrimeConstants.ratio f)‖ ^
+      2 =
+    RHPrimeConstants.mass * ‖RHRawProjection.projectLp (Real.log 5 / 2) (Real.log 2) RHPrimeConstants.ratio f‖ ^ 2
+=== RHChainGeometry.log5_geometry
+RHChainGeometry.log5_geometry : 0 < Real.log 2 ∧
+  2 * Real.log 2 < Real.log 5 ∧
+    Real.log 5 < 3 * Real.log 2 ∧
+      Real.log 5 < Real.log 2 + Real.log 3 ∧ Real.log 3 < 2 * Real.log 2 ∧ Real.log 5 < 2 * Real.log 3
+=== RHChainGeometry.middle_in_gap
+@RHChainGeometry.middle_in_gap : ∀ {L a b t : ℝ},
+  2 * L < a + b → t ∈ Set.Ico (-L) (L - 2 * a) → t + a ∈ Set.Ioo (L - b) (-L + b)
+=== RHChainGeometry.outside_gap
+@RHChainGeometry.outside_gap : ∀ {L a b t : ℝ},
+  b < 2 * a → t ∈ Set.Ico (-L) (L - 2 * a) → t ∉ Set.Ioo (L - b) (-L + b) ∧ t + 2 * a ∉ Set.Ioo (L - b) (-L + b)
+=== RHClaimA0520.claimA
+RHClaimA0520.claimA : RHInterface0516.ClaimA (1 / 10 ^ 14)
+=== RHClaimA0520.g_error
+RHClaimA0520.g_error : ∀ n ≤ 63,
+  ∀ {x : ℝ},
+    |x| < RHLog5Bridge.halfWidth →
+      |(1 / 2 *
+                (RH_Rebaseline.T_tail (RHLog5Bridge.halfWidth - x) + Real.log (RHLog5Bridge.halfWidth - x) +
+                  (RH_Rebaseline.T_tail (RHLog5Bridge.halfWidth + x) + Real.log (RHLog5Bridge.halfWidth + x))) -
+              (2 * Real.log 2 + Real.pi / 2 - Polynomial.eval x (RHApproxPolynomial0520.gPoly false) -
+                Polynomial.eval x (RHApproxPolynomial0520.gPoly true))) *
+            Polynomial.eval x (RHConditionalLog5.basisPoly n)| ≤
+        9 / 10 ^ 18
+=== RHClaimA0520.smooth_error
+RHClaimA0520.smooth_error : ∀ n ≤ 63,
+  ∀ {x : ℝ},
+    |x| < RHLog5Bridge.halfWidth →
+      |RHSmoothIdentity0520.smooth n x - Polynomial.eval x (RHApproxPolynomial0520.approxPoly n)| ≤ 1 / 10 ^ 14
+=== RHColDecomp0499.colEntry_decomp
+RHColDecomp0499.colEntry_decomp : ∀ (n k : ℕ),
+  RHColDecomp0499.colEntry n k =
+    ((RHLowBlock0494.h0c + ↑(harmonic n)) * if n = k then 1 else 0) + RHColDecomp0499.Rp n k + RHColDecomp0499.Tp n k +
+          2 * RHColDecomp0499.Cc n * RHColDecomp0499.Cc k -
+        2 * RHColDecomp0499.Ss n * RHColDecomp0499.Ss k -
+      RHColDecomp0499.Pr n k
+=== RHColDecomp0499.real_eigen
+RHColDecomp0499.real_eigen : ∀ (n : ℕ) {x : ℝ},
+  x ∈ Set.Icc (-RHLog5Bridge.halfWidth) RHLog5Bridge.halfWidth →
+    ∫ (y : ℝ) in -RHLog5Bridge.halfWidth..RHLog5Bridge.halfWidth,
+        (Polynomial.eval x (RHConditionalLog5.basisPoly n) - Polynomial.eval y (RHConditionalLog5.basisPoly n)) /
+          |x - y| =
+      2 * ↑(harmonic n) * Polynomial.eval x (RHConditionalLog5.basisPoly n)
+=== RHColL2.column_memLp_unconditional
+RHColL2.column_memLp_unconditional : ∀ (L : ℝ),
+  0 < L → ∀ (p : Polynomial ℝ), MeasureTheory.MemLp (RHWeilColumnCandidate.column L p) 2 MeasureTheory.volume
+=== RHColL2.zeroPoly_memLp
+RHColL2.zeroPoly_memLp : ∀ (L : ℝ),
+  0 ≤ L → ∀ (p : Polynomial ℝ), MeasureTheory.MemLp (RHWeilColumnCandidate.zeroPoly L p) 2 MeasureTheory.volume
+=== RHComparisonIntegral.polynomial_variational_bound
+@RHComparisonIntegral.polynomial_variational_bound : ∀ {L : ℝ}
+  (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+  RHComparisonEnergy.InDomain L f →
+    ∀ (p : Polynomial ℂ),
+      1 / 2 *
+            ∫ (z : ℝ × ℝ),
+              (RHTuckMixed.mixedDifference (↑↑f) p
+                  z).re ∂(MeasureTheory.volume.restrict (Set.Icc (-L) L)).prod
+                (MeasureTheory.volume.restrict (Set.Icc (-L) L)) -
+          1 / 4 *
+            ∫ (z : ℝ × ℝ),
+              RHComparisonIntegral.density (fun x => Polynomial.eval (↑x) p)
+                z ∂(MeasureTheory.volume.restrict (Set.Icc (-L) L)).prod
+                (MeasureTheory.volume.restrict (Set.Icc (-L) L)) ≤
+        (RHComparisonEnergy.intervalEnergy L f).toReal
+=== RHComplexFrequency.W_re_im
+@RHComplexFrequency.W_re_im : ∀ {f : ℝ → ℂ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 2 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        Zeta23.zetaZeroConfig.W f f =
+          (Zeta23.zetaZeroConfig.W (fun x => ↑(f x).re) fun x => ↑(f x).re) +
+            Zeta23.zetaZeroConfig.W (fun x => ↑(f x).im) fun x => ↑(f x).im
+=== RHComplexFrequency.density_pair
+@RHComplexFrequency.density_pair : ∀ {f : ℝ → ℂ},
+  Continuous f →
+    HasCompactSupport f →
+      ∀ (L t : ℝ),
+        RHComplexFrequency.density L f t + RHComplexFrequency.density L f (-t) =
+          2 *
+            (RHComplexFrequency.density L (fun x => ↑(f x).re) t + RHComplexFrequency.density L (fun x => ↑(f x).im) t)
+=== RHComplexFrequency.frequency_package
+@RHComplexFrequency.frequency_package : ∀ {f : ℝ → ℂ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 2 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ) ∧
+          MeasureTheory.Integrable
+              (fun t =>
+                Zeta23.paperFT f ↑t * (starRingEnd ℂ) (Zeta23.paperFT f ↑t) * ↑(Zeta23.nuX (Real.exp (2 * L)) t))
+              MeasureTheory.volume ∧
+            Zeta23.zetaZeroConfig.W f f =
+              ∫ (t : ℝ),
+                Zeta23.paperFT f ↑t * (starRingEnd ℂ) (Zeta23.paperFT f ↑t) * ↑(Zeta23.nuX (Real.exp (2 * L)) t)
+=== RHComplexFrequency.integral_of_pair
+@RHComplexFrequency.integral_of_pair : ∀ {a u v : ℝ → ℂ},
+  MeasureTheory.Integrable a MeasureTheory.volume →
+    MeasureTheory.Integrable u MeasureTheory.volume →
+      MeasureTheory.Integrable v MeasureTheory.volume →
+        (∀ (t : ℝ), a t + a (-t) = 2 * (u t + v t)) → ∫ (t : ℝ), a t = (∫ (t : ℝ), u t) + ∫ (t : ℝ), v t
+=== RHComplexFrequency.nuX_even_exp
+RHComplexFrequency.nuX_even_exp : ∀ (L t : ℝ), Zeta23.nuX (Real.exp L) (-t) = Zeta23.nuX (Real.exp L) t
+=== RHComplexFrequency.paired_square
+RHComplexFrequency.paired_square : ∀ (a b : ℂ),
+  (a + Complex.I * b) * (starRingEnd ℂ) (a + Complex.I * b) +
+      ((starRingEnd ℂ) a + Complex.I * (starRingEnd ℂ) b) *
+        (starRingEnd ℂ) ((starRingEnd ℂ) a + Complex.I * (starRingEnd ℂ) b) =
+    2 * (a * (starRingEnd ℂ) a + b * (starRingEnd ℂ) b)
+=== RHComplexSpatialEndpoint.full_zero_log5
+RHComplexSpatialEndpoint.full_zero_log5 : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+      (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ) ∧
+        (Zeta23.zetaZeroConfig.W f f).re =
+          (((1 / 4).digamma.re - Real.log Real.pi) * ∫ (x : ℝ), ‖f x‖ ^ 2) + RHComplexSpatial.complexSpatialEnergy f +
+                2 * ‖∫ (x : ℝ), f x * ↑(Real.cosh (x / 2))‖ ^ 2 -
+              2 * ‖∫ (x : ℝ), f x * ↑(Real.sinh (x / 2))‖ ^ 2 -
+            2 *
+              ∑ n ∈ Finset.range 5,
+                ArithmeticFunction.vonMangoldt n / √↑n * (∫ (t : ℝ), f t * (starRingEnd ℂ) (f (t - Real.log ↑n))).re
+=== RHConcreteParameters.concrete
+RHConcreteParameters.concrete : RHConditionalLog5.Parameters
+=== RHConcreteParameters.g4
+RHConcreteParameters.g4 : RHConditionalLog5.G4 RHConcreteParameters.concrete
+=== RHConditionalLog5.compare
+RHConditionalLog5.compare : (ℝ → ℝ) → ℝ
+=== RHDilog0514.dilog
+RHDilog0514.dilog : ∫ (t : ℝ) in 0..1, Real.log t * Real.log (1 - t) = 2 - Real.pi ^ 2 / 6
+=== RHDilog0514.kappa_zero
+RHDilog0514.kappa_zero : ∫ (x : ℝ) in -1..1, Real.log (1 + x) * Real.log (1 - x) * RHLeg0503.p 0 x =
+  2 * Real.log 2 ^ 2 - 4 * Real.log 2 + 4 - Real.pi ^ 2 / 3
+=== RHEnergyMass.cross_mass_lower
+@RHEnergyMass.cross_mass_lower : ∀ {L : ℝ},
+  0 < L →
+    ∀ (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+      2 * ENNReal.ofReal (RH_Rebaseline.T_tail L) * ENNReal.ofReal (‖f‖ ^ 2) ≤
+        ∫⁻ (x : ℝ) in Set.Icc (-L) L,
+          ∫⁻ (y : ℝ) in (Set.Icc (-L) L)ᶜ, RHFormDomain.kernel (x - y) * ENNReal.ofReal (‖↑↑f x‖ ^ 2)
+=== RHEnergySplit.actual_energy_split
+RHEnergySplit.actual_energy_split : ∀ (L : ℝ)
+  (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+  RHFormDomain.intervalEnergy L f = 4⁻¹ * (RHEnergySplit.internal L ↑↑f + 2 * RHEnergySplit.cross L ↑↑f)
+=== RHEnergySplit.cross
+RHEnergySplit.cross : ℝ → (ℝ → ℂ) → ENNReal
+=== RHEnergySplit.energy_split
+RHEnergySplit.energy_split : ∀ (L : ℝ) (f : ℝ → ℂ),
+  Measurable f →
+    RHFormDomain.energy (RHFormDomain.extend L f) = 4⁻¹ * (RHEnergySplit.internal L f + 2 * RHEnergySplit.cross L f)
+=== RHEnergySplit.internal
+RHEnergySplit.internal : ℝ → (ℝ → ℂ) → ENNReal
+=== RHEntryBall0512.entry_mem
+RHEntryBall0512.entry_mem : ∀ (n k : ℕ),
+  n < 64 → k < 128 → RHBall0504.mem RHEntryBall0512.S128 (RHColDecomp0499.colEntry n k) (RHEntryBall0512.entryB n k)
+=== RHExternalPotential.actual_tail_integral
+@RHExternalPotential.actual_tail_integral : ∀ {b : ℝ},
+  0 < b →
+    MeasureTheory.IntegrableOn (fun t => Real.exp (t / 2) / Real.sinh t) (Set.Ioi b) MeasureTheory.volume ∧
+      ∫ (t : ℝ) in Set.Ioi b, Real.exp (t / 2) / Real.sinh t = RH_Rebaseline.T_tail b
+=== RHExternalPotential.ae_symmetric_lower
+RHExternalPotential.ae_symmetric_lower : ∀ (L : ℝ),
+  ∀ᵐ (x : ℝ) ∂MeasureTheory.volume.restrict (Set.Icc (-L) L),
+    RH_Rebaseline.T_tail L ≤ (RH_Rebaseline.T_tail (L - x) + RH_Rebaseline.T_tail (L + x)) / 2
+=== RHExternalPotential.outside_integral
+@RHExternalPotential.outside_integral : ∀ {L x : ℝ},
+  |x| < L →
+    MeasureTheory.IntegrableOn (fun y => RH_Rebaseline.K_kernel |x - y|) (Set.Icc (-L) L)ᶜ MeasureTheory.volume ∧
+      ∫ (y : ℝ) in (Set.Icc (-L) L)ᶜ, RH_Rebaseline.K_kernel |x - y| =
+        RH_Rebaseline.T_tail (L - x) + RH_Rebaseline.T_tail (L + x)
+=== RHExternalPotential.tail_convex
+RHExternalPotential.tail_convex : ConvexOn ℝ (Set.Ioi 0) RH_Rebaseline.T_tail
+=== RHExternalPotential.tail_symmetric_lower
+@RHExternalPotential.tail_symmetric_lower : ∀ {L x : ℝ},
+  |x| < L → RH_Rebaseline.T_tail L ≤ (RH_Rebaseline.T_tail (L - x) + RH_Rebaseline.T_tail (L + x)) / 2
+=== RHFRed0516.F_eq
+RHFRed0516.F_eq : ∀ (i k : ℕ) {s : ℝ},
+  0 < s →
+    s < 2 →
+      RHPairInt0516.F i k s =
+        (1 - s / 2) *
+          ((Real.log (1 - s / 2) + Real.log (1 + s / 2)) *
+              ∑ j ∈ Finset.range (i + 1),
+                RHPrAff0511.Af (1 - s / 2) (s / 2) i j * RHPrAff0511.Af (1 - s / 2) (s / 2 - s) k j *
+                  (2 / (2 * ↑j + 1)) +
+            ∑ j ∈ Finset.range (i + 1),
+              ∑ j' ∈ Finset.range (k + 1),
+                RHPrAff0511.Af (1 - s / 2) (s / 2) i j * RHPrAff0511.Af (1 - s / 2) (s / 2 - s) k j' *
+                  ((-1) ^ (j + j') * RHRec2D0515.Mw (fun t => Real.log (1 + t)) j j' +
+                    RHRec2D0515.Mw (fun t => Real.log (1 + (1 - s / 2) / (1 + s / 2) * t)) j j'))
+=== RHFinalAll0524.G6c_concrete
+RHFinalAll0524.G6c_concrete : RHCaps0494.G6c RHConcreteParameters.concrete RHT5Final0512.capsNew
+=== RHFinalAll0524.target_log5_concrete
+RHFinalAll0524.target_log5_concrete : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+      f ≠ 0 → (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ) ∧ 0 < (Zeta23.zetaZeroConfig.W f f).re
+=== RHFiniteCoefficients.finite_bound
+@RHFiniteCoefficients.finite_bound : ∀ {L : ℝ} (hL : 0 < L) (s : Finset ℕ)
+  (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+  RHComparisonEnergy.InDomain L f → RHFiniteCoefficients.mass hL s f ≤ (RHComparisonEnergy.intervalEnergy L f).toReal
+=== RHFiniteCoefficients.polynomial_energy
+@RHFiniteCoefficients.polynomial_energy : ∀ {L : ℝ} (hL : 0 < L) (s : Finset ℕ)
+  (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+  1 / 4 *
+      ∫ (z : ℝ × ℝ),
+        RHComparisonIntegral.density (fun x => Polynomial.eval (↑x) (RHProjectionPolynomial.poly hL s f))
+          z ∂(MeasureTheory.volume.restrict (Set.Icc (-L) L)).prod (MeasureTheory.volume.restrict (Set.Icc (-L) L)) =
+    RHFiniteCoefficients.mass hL s f
+=== RHFiniteCoefficients.value_direction
+@RHFiniteCoefficients.value_direction : ∀ {L : ℝ} (hL : 0 < L)
+  (g : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))) (n : ℕ),
+  RHFiniteMixed.value L (↑↑g) (RHLegendreDirections.directionPoly L n) =
+    ↑(harmonic n) * inner ℂ g (RHLegendreDirections.direction L ⋯ n)
+=== RHFiniteCoefficients.value_poly_of_coeff
+@RHFiniteCoefficients.value_poly_of_coeff : ∀ {L : ℝ} (hL : 0 < L) (s : Finset ℕ)
+  (f g : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+  (∀ n ∈ s, inner ℂ (RHLegendreDirections.direction L ⋯ n) g = inner ℂ (RHLegendreDirections.direction L ⋯ n) f) →
+    RHFiniteMixed.value L (↑↑g) (RHProjectionPolynomial.poly hL s f) = ↑(RHFiniteCoefficients.mass hL s f)
+=== RHFormDomain.InDomain
+RHFormDomain.InDomain : (L : ℝ) → ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L))) → Prop
+=== RHFormDomain.energy
+RHFormDomain.energy : (ℝ → ℂ) → ENNReal
+=== RHFormDomain.energy_congr_ae
+@RHFormDomain.energy_congr_ae : ∀ {f g : ℝ → ℂ},
+  f =ᵐ[MeasureTheory.volume] g → RHFormDomain.energy f = RHFormDomain.energy g
+=== RHG1Adapter0484.even_shift
+RHG1Adapter0484.even_shift : RHConcreteParameters.concrete.shift false ≤ RHWeilShift.c_even
+=== RHG1Adapter0484.g1
+RHG1Adapter0484.g1 : RHConditionalLog5.G1 RHConcreteParameters.concrete
+=== RHG1Adapter0484.odd_shift
+RHG1Adapter0484.odd_shift : RHConcreteParameters.concrete.shift true ≤ RHWeilShift.c_odd
+=== RHG2Final0489.g2
+RHG2Final0489.g2 : RHConditionalLog5.G2 RHConcreteParameters.concrete
+=== RHGApprox0501.g_approx
+@RHGApprox0501.g_approx : ∀ {b : ℝ},
+  0 < b →
+    b ≤ Real.log 5 →
+      |RH_Rebaseline.T_tail b + Real.log b + RHGApprox0501.Gq b - (2 * Real.log 2 + Real.pi / 2)| ≤ 2 / 10 ^ 24 * b
+=== RHGammaThm0516.gamma_eq
+RHGammaThm0516.gamma_eq : ∀ (i k : ℕ),
+  ∫ (u : ℝ) in -1..1, RHSingDef0516.phi i u * RHSingDef0516.phi k u =
+    1 / 4 *
+            ((1 + (-1) ^ (i + k)) * RHRec2D0515.Mw (fun x => Real.log (1 + x) ^ 2) i k +
+              2 * RHRec2D0515.Mw (fun x => Real.log (1 + x) * Real.log (1 - x)) i k) +
+          1 / 2 *
+            ∑ a,
+              RHGammaExp0516.W a *
+                ((1 + (-1) ^ (i + k)) *
+                  (RHPairInt0516.F i k (RHGammaExp0516.Sh a) + RHPairInt0516.F k i (RHGammaExp0516.Sh a))) +
+        ∑ a,
+          ∑ b,
+            RHGammaExp0516.W a * RHGammaExp0516.W b *
+              ((1 + (-1) ^ (i + k)) * RHPairInt0516.OO i k (RHGammaExp0516.Sh a) (RHGammaExp0516.Sh b)) +
+      RHGammaExp0516.W 0 * RHGammaExp0516.W 0 *
+        (RHPairInt0516.X i k (RHGammaExp0516.Sh 0) (RHGammaExp0516.Sh 0) +
+          RHPairInt0516.X k i (RHGammaExp0516.Sh 0) (RHGammaExp0516.Sh 0))
+=== RHGersh0512.gersh
+@RHGersh0512.gersh : ∀ {ι : Type u_1} [inst : Fintype ι] [inst_1 : DecidableEq ι] (M : ι → ι → ℝ) (μ : ℝ),
+  (∀ (i : ι), μ ≤ M i i - 1 / 2 * ∑ j ∈ Finset.univ.erase i, (|M i j| + |M j i|)) →
+    ∀ (c : ι → ℝ), μ * ∑ i, c i ^ 2 ≤ ∑ i, ∑ j, c i * c j * M i j
+=== RHHypApprox0520.hyp_error
+@RHHypApprox0520.hyp_error : ∀ {x : ℝ},
+  |x / 2| ≤ 1 / 2 →
+    |Real.cosh (x / 2) - Polynomial.eval x (RHHypApprox0520.hypPoly false)| ≤ 1 / 10 ^ 40 ∧
+      |Real.sinh (x / 2) - Polynomial.eval x (RHHypApprox0520.hypPoly true)| ≤ 1 / 10 ^ 40
+=== RHInterface0516.Sx
+RHInterface0516.Sx : ℕ → ℝ → ℝ
+=== RHInterface0524.NumBound
+RHInterface0524.NumBound : ℝ → ℝ → ℝ → Prop
+=== RHJointPrimeBound.log5_prime_joint_bound
+RHJointPrimeBound.log5_prime_joint_bound : ∀
+  (f : ↥(MeasureTheory.Lp ℝ 2 (MeasureTheory.volume.restrict (Set.Icc (-(Real.log 5 / 2)) (Real.log 5 / 2))))),
+  2 * RHPrimeConstants.alpha (Real.log 2) * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 2) +
+        2 * RHPrimeConstants.beta (Real.log 2) * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 4) +
+      2 * RHActualPrime3.mu3 * RHActualCorrelation.autocorr (Real.log 5 / 2) f (Real.log 3) ≤
+    (RHPrimeConstants.lam (Real.log 2) + RHActualPrime3.mu3 - RHJointPrimeBound.log5_gamma) * ‖f‖ ^ 2
+=== RHKappa0514.kappa_succ
+RHKappa0514.kappa_succ : ∀ (n : ℕ),
+  ∫ (x : ℝ) in -1..1, Real.log (1 + x) * Real.log (1 - x) * RHLeg0503.p (n + 1) x =
+    -((∫ (x : ℝ) in -1..1, Real.log (1 - x) * ((x - 1) * RHLeg0503.d (n + 1) x)) +
+          ∫ (x : ℝ) in -1..1, Real.log (1 + x) * ((x + 1) * RHLeg0503.d (n + 1) x)) /
+      ((↑n + 1) * (↑n + 2))
+=== RHKernelConnection.kernel_lower
+@RHKernelConnection.kernel_lower : ∀ {s : ℝ}, 0 < s → s ≤ 2 → s⁻¹ ≤ Real.exp (s / 2) / Real.sinh s
+=== RHKernelElementary.kernel_of_ratio
+@RHKernelElementary.kernel_of_ratio : ∀ {s : ℝ},
+  0 < s → Real.sinh s / s ≤ (Real.sinh 2 / 2) ^ (s / 2) → s⁻¹ ≤ Real.exp (s / 2) / Real.sinh s
+=== RHKernelElementary.sinh_two_ratio_le_exp
+RHKernelElementary.sinh_two_ratio_le_exp : Real.sinh 2 / 2 ≤ Real.exp 1
+=== RHKernelError0520.kernel_error
+RHKernelError0520.kernel_error : ∀ n ≤ 63,
+  ∀ {x : ℝ},
+    |x| ≤ RHLog5Bridge.halfWidth →
+      |(1 / 2 *
+              ∫ (y : ℝ) in Set.Icc (-RHLog5Bridge.halfWidth) RHLog5Bridge.halfWidth,
+                RHColDecomp0499.Rk |x - y| *
+                  (Polynomial.eval x (RHConditionalLog5.basisPoly n) -
+                    Polynomial.eval y (RHConditionalLog5.basisPoly n))) -
+            1 / 2 *
+              ∫ (y : ℝ) in Set.Icc (-RHLog5Bridge.halfWidth) RHLog5Bridge.halfWidth,
+                RHPolyL0500.ev RHTruncation0520.q63 (|x - y| / 2) *
+                  (Polynomial.eval x (RHConditionalLog5.basisPoly n) -
+                    Polynomial.eval y (RHConditionalLog5.basisPoly n))| ≤
+        18 * RHLog5Bridge.halfWidth / 10 ^ 18
+=== RHKernelJensen.sinh_ratio_bound
+@RHKernelJensen.sinh_ratio_bound : ∀ {s : ℝ}, 0 < s → s ≤ 2 → Real.sinh s / s ≤ (Real.sinh 2 / 2) ^ (s / 2)
+=== RHLamBaseMem0522.lamBase_mem
+@RHLamBaseMem0522.lamBase_mem : ∀ {S : ℕ},
+  0 < S →
+    ∀ {κ : ℝ} {kB : RHBall0504.Ball},
+      RHBall0504.mem S κ kB →
+        0 ≤ κ →
+          kB.1 + ↑kB.2 < ↑S →
+            ∀ (R NL : ℕ),
+              NL ≤ R + 1 →
+                RHRec2D0515.RowMem S (RHRec2D0515.Mw (fun t => Real.log (1 + κ * t)) 0) (RHLamDef0521.lamBase S kB R NL)
+=== RHLegendreBound0520.abs_p_le_one
+RHLegendreBound0520.abs_p_le_one : ∀ (n : ℕ) {x : ℝ}, |x| ≤ 1 → |RHLeg0503.p n x| ≤ 1
+=== RHLog5Bridge.W_real_deficit
+RHLog5Bridge.W_real_deficit : ∀ (b : ℝ) (h : ℝ → ℝ),
+  RH_LiteratureBridge.W_real b h =
+    (((1 / 4).digamma.re - Real.log Real.pi) * h 0 + RH_GammaFinalFormula.T_tail b * h 0 +
+          ∫ (x : ℝ) in 0..b, (h 0 - h x) * RH_GammaFinalFormula.K_kernel x) +
+        RH_LiteratureBridge.P_pole b h -
+      RH_LiteratureBridge.S_prime h
+=== RHLog5Bridge.whole_zero_endpoint
+RHLog5Bridge.whole_zero_endpoint : ∀ (f : ℝ → ℝ),
+  ContDiff ℝ 1 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) →
+      (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand (fun x => ↑(f x)) (fun x => ↑(f x)) ↑ρ) ∧
+        (Zeta23.zetaZeroConfig.W (fun x => ↑(f x)) fun x => ↑(f x)).re =
+          RH_LiteratureBridge.W_real (Real.log 5) (RH_LiteratureBridge.real_autocorr f)
+=== RHLogMoment0508.mu_succ
+RHLogMoment0508.mu_succ : ∀ (n : ℕ),
+  ∫ (x : ℝ) in -1..1, Real.log (1 + x) * RHLeg0503.p (n + 1) x = 2 * (-1) ^ (n + 2) / ((↑n + 1) * (↑n + 2))
+=== RHLogMoment0508.mu_zero
+RHLogMoment0508.mu_zero : ∫ (x : ℝ) in -1..1, Real.log (1 + x) * RHLeg0503.p 0 x = 2 * Real.log 2 - 2
+=== RHLowBlock0494.G5c_of_lowForm
+RHLowBlock0494.G5c_of_lowForm : ∀ (k : RHCaps0494.Caps),
+  (∀ (o : Bool) (c : RHConditionalLog5.I → ℝ),
+      (1 - k.eta o) * ∑ i, c i ^ 2 ≤ RHLowBlock0494.lowForm o ((RHConcreteParameters.concrete.B o).mulVec c)) →
+    RHCaps0494.G5c RHConcreteParameters.concrete k
+=== RHLowBlock0494.spatialEnergy_zp
+RHLowBlock0494.spatialEnergy_zp : ∀ (p : Polynomial ℝ),
+  RHAutocorrEnergy.spatialEnergy (RHLowBlock0494.zp p) = ∫ (x : ℝ), RHLowBlock0494.colArch p x * RHLowBlock0494.zp p x
+=== RHLowBlock0494.targetQ_zp
+RHLowBlock0494.targetQ_zp : ∀ (p : Polynomial ℝ),
+  RHTargetFormBinding.targetQ_real (RHLowBlock0494.zp p) =
+    ∫ (x : ℝ), RHWeilColumnCandidate.column RHLog5Bridge.halfWidth p x * RHLowBlock0494.zp p x
+=== RHLowBlock0494.zp_energy_finite
+RHLowBlock0494.zp_energy_finite : ∀ (p : Polynomial ℝ), (RHFormDomain.energy fun x => ↑(RHLowBlock0494.zp p x)) < ⊤
+=== RHNu0514.nu_succ
+RHNu0514.nu_succ : ∀ (n : ℕ),
+  ∫ (x : ℝ) in -1..1, Real.log (1 + x) ^ 2 * RHLeg0503.p (n + 1) x =
+    -(2 * ∫ (x : ℝ) in -1..1, Real.log (1 + x) * ((x - 1) * RHLeg0503.d (n + 1) x)) / ((↑n + 1) * (↑n + 2))
+=== RHNu0514.nu_zero
+RHNu0514.nu_zero : ∫ (x : ℝ) in -1..1, Real.log (1 + x) ^ 2 * RHLeg0503.p 0 x = 2 * Real.log 2 ^ 2 - 4 * Real.log 2 + 4
+=== RHNuK0514.A_closed
+RHNuK0514.A_closed : ∀ (m : ℕ),
+  RHNuK0514.A (m + 1) = 2 * (-1) ^ (m + 1) * (Real.log 2 - RHNuK0514.H m - RHNuK0514.H (m + 2)) ∧
+    RHNuK0514.A (m + 2) = 2 * (-1) ^ (m + 2) * (Real.log 2 - RHNuK0514.H (m + 1) - RHNuK0514.H (m + 3))
+=== RHNuK0514.A_rec
+RHNuK0514.A_rec : ∀ (m : ℕ),
+  RHNuK0514.A (m + 2) =
+    RHNuK0514.A m + (↑m + 2) * RHNuK0514.muC (m + 2) + (↑m + 1) * RHNuK0514.muC m - (2 * ↑m + 3) * RHNuK0514.muC (m + 1)
+=== RHNuK0514.B_closed
+RHNuK0514.B_closed : ∀ (m : ℕ),
+  RHNuK0514.B (m + 1) = 2 * Real.log 2 - RHNuK0514.muC (m + 1) ∧
+    RHNuK0514.B (m + 2) = 2 * Real.log 2 - RHNuK0514.muC (m + 2)
+=== RHNuK0514.C_eq
+RHNuK0514.C_eq : ∀ (m : ℕ), RHNuK0514.C m = (-1) ^ m * RHNuK0514.B m
+=== RHNuK0514.kappa_closed
+RHNuK0514.kappa_closed : ∀ (n : ℕ),
+  ∫ (x : ℝ) in -1..1, Real.log (1 + x) * Real.log (1 - x) * RHLeg0503.p (n + 1) x =
+    -(((-1) ^ (n + 1) + 1) * (2 * Real.log 2 - RHNuK0514.muC (n + 1))) / ((↑n + 1) * (↑n + 2))
+=== RHNuK0514.nu_closed
+RHNuK0514.nu_closed : ∀ (n : ℕ),
+  ∫ (x : ℝ) in -1..1, Real.log (1 + x) ^ 2 * RHLeg0503.p (n + 1) x =
+    RHNuK0514.muC (n + 1) * (2 * Real.log 2 - 2 * RHNuK0514.H n - 2 * RHNuK0514.H (n + 2))
+=== RHOriginalLower.energy_lower
+@RHOriginalLower.energy_lower : ∀ {L : ℝ},
+  0 < L →
+    L ≤ 1 →
+      ∀ (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+        RHComparisonEnergy.intervalEnergy L f + ENNReal.ofReal (RH_Rebaseline.T_tail L) * ENNReal.ofReal (‖f‖ ^ 2) ≤
+          RHFormDomain.intervalEnergy L f
+=== RHOriginalLower.energy_lower_real
+@RHOriginalLower.energy_lower_real : ∀ {L : ℝ},
+  0 < L →
+    L ≤ 1 →
+      ∀ (f : ↥(MeasureTheory.Lp ℂ 2 (MeasureTheory.volume.restrict (Set.Icc (-L) L)))),
+        RHFormDomain.InDomain L f →
+          (RHComparisonEnergy.intervalEnergy L f).toReal + RH_Rebaseline.T_tail L * ‖f‖ ^ 2 ≤
+            (RHFormDomain.intervalEnergy L f).toReal
+=== RHPairInt0516.OO
+RHPairInt0516.OO : ℕ → ℕ → ℝ → ℝ → ℝ
+=== RHPairInt0516.P3
+RHPairInt0516.P3 : ∀ (i k : ℕ) {s t : ℝ},
+  0 ≤ s →
+    0 ≤ t → s + t ≤ 2 → ∫ (u : ℝ) in -1..1, RHSingDef0516.pm i s u * RHSingDef0516.pp k t u = RHPairInt0516.X i k s t
+=== RHPairInt0516.P3z
+RHPairInt0516.P3z : ∀ (i k : ℕ) {s t : ℝ},
+  2 ≤ s + t → ∫ (u : ℝ) in -1..1, RHSingDef0516.pm i s u * RHSingDef0516.pp k t u = 0
+=== RHPairInt0516.P4
+RHPairInt0516.P4 : ∀ (i k : ℕ) {s t : ℝ},
+  0 ≤ s →
+    0 ≤ t → s + t ≤ 2 → ∫ (u : ℝ) in -1..1, RHSingDef0516.pp i s u * RHSingDef0516.pm k t u = RHPairInt0516.X k i t s
+=== RHPairInt0516.P4z
+RHPairInt0516.P4z : ∀ (i k : ℕ) {s t : ℝ},
+  2 ≤ s + t → ∫ (u : ℝ) in -1..1, RHSingDef0516.pp i s u * RHSingDef0516.pm k t u = 0
+=== RHPairInt0516.X
+RHPairInt0516.X : ℕ → ℕ → ℝ → ℝ → ℝ
+=== RHPoleBounds0520.Cc_bound
+RHPoleBounds0520.Cc_bound : ∀ n ≤ 63, |RHColDecomp0499.Cc n| ≤ 100
+=== RHPoleBounds0520.Ss_bound
+RHPoleBounds0520.Ss_bound : ∀ n ≤ 63, |RHColDecomp0499.Ss n| ≤ 100
+=== RHPoleFactor.pole_autocorr_cosh_sinh
+@RHPoleFactor.pole_autocorr_cosh_sinh : ∀ {f : ℝ → ℝ} {L : ℝ},
+  0 < L →
+    ContDiff ℝ 1 f →
+      (∀ (x : ℝ), f x ≠ 0 → |x| ≤ L) →
+        RH_LiteratureBridge.P_pole (2 * L) (RH_LiteratureBridge.real_autocorr f) =
+          2 * (∫ (x : ℝ), f x * Real.cosh (x / 2)) ^ 2 - 2 * (∫ (x : ℝ), f x * Real.sinh (x / 2)) ^ 2
+=== RHPolyExp0522.poly_parity
+RHPolyExp0522.poly_parity : ∀ (P : Polynomial ℝ),
+  P.natDegree ≤ 127 →
+    ∀ (o : Bool),
+      ∃ c,
+        ∀ (x : ℝ),
+          (Polynomial.eval x P + ((-1) ^ if o = true then 1 else 0) * Polynomial.eval (-x) P) / 2 =
+            ∑ m ∈ Finset.range 64, c m * Polynomial.eval x (RHConditionalLog5.basisPoly (RHConditionalLog5.degree o m))
+=== RHPolynKernel0520.kernelPoly_degree
+RHPolynKernel0520.kernelPoly_degree : ∀ (v : List ℚ) (n : ℕ),
+  v.length ≤ 64 → n ≤ 63 → (RHPolynKernel0520.kernelPoly v n).natDegree ≤ 127
+=== RHPolynKernel0520.kernel_eq
+RHPolynKernel0520.kernel_eq : ∀ (v : List ℚ) (n : ℕ) {x : ℝ},
+  x ∈ Set.Icc (-RHLog5Bridge.halfWidth) RHLog5Bridge.halfWidth →
+    1 / 2 *
+        ∫ (y : ℝ) in Set.Icc (-RHLog5Bridge.halfWidth) RHLog5Bridge.halfWidth,
+          RHPolyL0500.ev v (|x - y| / 2) *
+            (Polynomial.eval x (RHConditionalLog5.basisPoly n) - Polynomial.eval y (RHConditionalLog5.basisPoly n)) =
+      Polynomial.eval x (RHPolynKernel0520.kernelPoly v n)
+=== RHPrAll0512.pr_all
+RHPrAll0512.pr_all : ∀ (n k : ℕ),
+  n < 64 → k < 128 → RHBall0504.mem (2 ^ 128) (RHPrEncl0511.T n k) ((RHPrAll0512.prSpecT n).getD k ((0, 0), 0, 0)).1
+=== RHPrimeConstants.lam_eq_beta_add_alpha_ratio
+RHPrimeConstants.lam_eq_beta_add_alpha_ratio : ∀ (a : ℝ),
+  RHPrimeConstants.lam a = RHPrimeConstants.beta a + RHPrimeConstants.alpha a * RHPrimeConstants.ratio
+=== RHPrimeConstants.lam_eq_two_alpha_div_ratio
+RHPrimeConstants.lam_eq_two_alpha_div_ratio : ∀ (a : ℝ),
+  RHPrimeConstants.lam a = 2 * RHPrimeConstants.alpha a / RHPrimeConstants.ratio
+=== RHPrimeConstants.mass_identity
+RHPrimeConstants.mass_identity : RHPrimeConstants.ratio ^ 2 / (2 + RHPrimeConstants.ratio ^ 2) = RHPrimeConstants.mass
+=== RHPrimeEndpoint.prime_sum_endpoint
+RHPrimeEndpoint.prime_sum_endpoint : ∀ (f : ℝ → ℝ),
+  ContDiff ℝ 1 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+      RH_LiteratureBridge.S_prime (RH_LiteratureBridge.real_autocorr f) =
+        2 *
+          ∑ n ∈ Finset.range 5,
+            ArithmeticFunction.vonMangoldt n / √↑n * RH_LiteratureBridge.real_autocorr f (Real.log ↑n)
+=== RHProjectionLoss.joint_bound
+@RHProjectionLoss.joint_bound : ∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E]
+  (C : E →ₗ[ℝ] E),
+  (∀ (z : E), ‖C z‖ ≤ ‖z‖) →
+    ∀ (u v : E) {p δ μ lam m24 m3 : ℝ},
+      0 < p →
+        0 < δ →
+          0 < μ →
+            ‖u + v‖ ^ 2 = ‖u‖ ^ 2 + ‖v‖ ^ 2 →
+              p * ‖u‖ ^ 2 = ‖C u‖ ^ 2 →
+                m24 ≤ lam * ‖u + v‖ ^ 2 - δ * ‖v‖ ^ 2 →
+                  m3 ≤ μ * (‖u + v‖ ^ 2 - ‖C (u + v)‖ ^ 2) →
+                    m24 + m3 ≤ (lam + μ - RHProjectionLoss.gamma p δ μ) * ‖u + v‖ ^ 2
+=== RHProjectionLoss.norm_loss
+@RHProjectionLoss.norm_loss : ∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℝ E] (C : E →ₗ[ℝ] E),
+  (∀ (z : E), ‖C z‖ ≤ ‖z‖) →
+    ∀ (u v : E) {p δ μ : ℝ},
+      0 < p →
+        0 < δ →
+          0 < μ →
+            ‖u + v‖ ^ 2 = ‖u‖ ^ 2 + ‖v‖ ^ 2 →
+              p * ‖u‖ ^ 2 = ‖C u‖ ^ 2 → RHProjectionLoss.gamma p δ μ * ‖u + v‖ ^ 2 ≤ δ * ‖v‖ ^ 2 + μ * ‖C (u + v)‖ ^ 2
+=== RHProjectionLoss.scalar_loss
+@RHProjectionLoss.scalar_loss : ∀ {p δ μ U v x : ℝ},
+  0 < p → 0 < δ → 0 < μ → p * U ≤ (x + v) ^ 2 → RHProjectionLoss.gamma p δ μ * (U + v ^ 2) ≤ δ * v ^ 2 + μ * x ^ 2
+=== RHQForm0512.G5c_of_rows
+RHQForm0512.G5c_of_rows : ∀ (k : RHCaps0494.Caps),
+  (∀ (o : Bool) (p : RHConditionalLog5.I),
+      1 - k.eta o ≤
+        RHQForm0512.Mq o p p - 1 / 2 * ∑ q ∈ Finset.univ.erase p, (|RHQForm0512.Mq o p q| + |RHQForm0512.Mq o q p|)) →
+    RHCaps0494.G5c RHConcreteParameters.concrete k
+=== RHRawProjection.log5_lp_pythagoras
+RHRawProjection.log5_lp_pythagoras : ∀ (r : ℝ)
+  (f : ↥(MeasureTheory.Lp ℝ 2 (MeasureTheory.volume.restrict (Set.Icc (-(Real.log 5 / 2)) (Real.log 5 / 2))))),
+  ‖f‖ ^ 2 =
+    ‖RHRawProjection.projectLp (Real.log 5 / 2) (Real.log 2) r f‖ ^ 2 +
+      ‖f - RHRawProjection.projectLp (Real.log 5 / 2) (Real.log 2) r f‖ ^ 2
+=== RHRawProjection.project
+RHRawProjection.project : ℝ → ℝ → ℝ → (ℝ → ℝ) → ℝ → ℝ
+=== RHRealChain.integral_chain_decomposition
+RHRealChain.integral_chain_decomposition : ∀ (g : ℝ → ℝ) (s W a : ℝ),
+  0 < a →
+    2 * a ≤ W →
+      W ≤ 3 * a →
+        MeasureTheory.IntegrableOn g (Set.Ico s (s + W)) MeasureTheory.volume →
+          ∫ (x : ℝ) in Set.Ico s (s + W), g x =
+            (∫ (t : ℝ) in Set.Ico s (s + W - 2 * a), g t + g (t + a) + g (t + 2 * a)) +
+              ∫ (t : ℝ) in Set.Ico (s + W - 2 * a) (s + a), g t + g (t + a)
+=== RHRealSpatialEndpoint.full_zero_log5
+RHRealSpatialEndpoint.full_zero_log5 : ∀ (f : ℝ → ℝ),
+  ContDiff ℝ 1 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+      (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand (fun x => ↑(f x)) (fun x => ↑(f x)) ↑ρ) ∧
+        (Zeta23.zetaZeroConfig.W (fun x => ↑(f x)) fun x => ↑(f x)).re =
+          ((((1 / 4).digamma.re - Real.log Real.pi) * ∫ (x : ℝ), f x ^ 2) +
+                  1 / 4 * ∫ (x : ℝ) (y : ℝ), RH_GammaFinalFormula.K_kernel |x - y| * (f x - f y) ^ 2) +
+                2 * (∫ (x : ℝ), f x * Real.cosh (x / 2)) ^ 2 -
+              2 * (∫ (x : ℝ), f x * Real.sinh (x / 2)) ^ 2 -
+            2 *
+              ∑ n ∈ Finset.range 5,
+                ArithmeticFunction.vonMangoldt n / √↑n * RH_LiteratureBridge.real_autocorr f (Real.log ↑n)
+=== RHRec2D0515.Mw_rec
+RHRec2D0515.Mw_rec : ∀ (w : ℝ → ℝ),
+  IntervalIntegrable w MeasureTheory.volume (-1) 1 →
+    ∀ (j l : ℕ),
+      (2 * ↑l + 1) * ((↑j + 1) * RHRec2D0515.Mw w (j + 1) l) =
+        (2 * ↑j + 1) * ((↑l + 1) * RHRec2D0515.Mw w j (l + 1) + ↑l * RHRec2D0515.Mw w j (l - 1)) -
+          (2 * ↑l + 1) * (↑j * RHRec2D0515.Mw w (j - 1) l)
+=== RHResidualApprox0494.G6c_of_approx
+RHResidualApprox0494.G6c_of_approx : ∀ (k : RHCaps0494.Caps) (W : Bool → ℕ → RHConditionalLog5.I → ℝ),
+  (∀ (o : Bool),
+      1 / RHConditionalLog5.dM o *
+          ∑ j,
+            ∫ (x : ℝ),
+              (∑ i, RHConcreteParameters.concrete.B o i j * RHConditionalLog5.col o i x -
+                  ∑ m ∈ Finset.range 64, W o m j * RHConditionalLog5.basis (RHConditionalLog5.degree o m) x) ^
+                2 ≤
+        k.tau o) →
+    RHCaps0494.G6c RHConcreteParameters.concrete k
+=== RHRho0522.final_even
+RHRho0522.final_even : RHRho0522.check false RHRho0522.rhoE = true
+=== RHRho0522.final_odd
+RHRho0522.final_odd : RHRho0522.check true RHRho0522.rhoO = true
+=== RHRhoSound0524.numBound
+RHRhoSound0524.numBound : RHInterface0524.NumBound (1 / 10 ^ 14) (1 / 10 ^ 4) (99 / 100)
+=== RHRkApprox0500.Rk_approx
+@RHRkApprox0500.Rk_approx : ∀ {s : ℝ},
+  0 < s → s ≤ Real.log 5 → |RHColDecomp0499.Rk s - RHPolyL0500.ev RHRkApprox0500.ql (s / 2)| ≤ 2 / 10 ^ 24
+=== RHRkApprox0500.aQ
+RHRkApprox0500.aQ : ℚ
+=== RHRkApprox0500.bnd
+RHRkApprox0500.bnd : ℚ
+=== RHRkApprox0500.bnd_le
+RHRkApprox0500.bnd_le : RHRkApprox0500.bnd ≤ 2 / 10 ^ 24
+=== RHRkApprox0500.ql
+RHRkApprox0500.ql : List ℚ
+=== RHRpExact0506.cc
+RHRpExact0506.cc : ℕ → ℝ
+=== RHSRed0516.phi_p
+RHSRed0516.phi_p : ∀ (i k : ℕ),
+  ∫ (u : ℝ) in -1..1, RHSingDef0516.phi i u * RHLeg0503.p k u =
+    1 / 2 * ((1 + (-1) ^ (i + k)) * RHRec2D0515.Mw (fun t => Real.log (1 + t)) i k) +
+      ∑ a, RHGammaExp0516.W a * ((1 + (-1) ^ (i + k)) * RHPairInt0516.OO i k (RHGammaExp0516.Sh a) 0)
+=== RHSingDef0516.phi
+RHSingDef0516.phi : ℕ → ℝ → ℝ
+=== RHSmoothIdentity0520.column_add_Sx_ae
+RHSmoothIdentity0520.column_add_Sx_ae : ∀ (n : ℕ),
+  ∀ᵐ (x : ℝ),
+    |x| < RHLog5Bridge.halfWidth →
+      RHWeilColumnCandidate.column RHLog5Bridge.halfWidth (RHConditionalLog5.basisPoly n) x + RHInterface0516.Sx n x =
+        RHSmoothIdentity0520.smooth n x
+=== RHSmoothIdentity0520.log_identity
+@RHSmoothIdentity0520.log_identity : ∀ {x : ℝ},
+  |x| < RHLog5Bridge.halfWidth →
+    RHSingDef0516.lg (x / RHLog5Bridge.halfWidth) =
+      Real.log (RHLog5Bridge.halfWidth - x) + Real.log (RHLog5Bridge.halfWidth + x) -
+        2 * Real.log RHLog5Bridge.halfWidth
+=== RHSmoothIdentity0520.prime_eq
+RHSmoothIdentity0520.prime_eq : ∀ (n : ℕ) {x : ℝ},
+  |x| < RHLog5Bridge.halfWidth →
+    x ≠ Real.log 2 - RHLog5Bridge.halfWidth →
+      x ≠ Real.log 3 - RHLog5Bridge.halfWidth →
+        x ≠ Real.log 4 - RHLog5Bridge.halfWidth →
+          RHLowBlock0494.primeTerm (RHConditionalLog5.basisPoly n) x =
+            RHRpExact0506.cc n * RHSingDef0516.pr n (x / RHLog5Bridge.halfWidth)
+=== RHSpatialBase0489.energyDensity_integrable
+@RHSpatialBase0489.energyDensity_integrable : ∀ {h : ℝ → ℝ},
+  Measurable h →
+    (RHFormDomain.energy fun x => ↑(h x)) < ⊤ →
+      MeasureTheory.Integrable (RHSpatialBase0489.energyDensity h) (MeasureTheory.volume.prod MeasureTheory.volume)
+=== RHSpatialBase0489.polarize_spatialEnergy
+@RHSpatialBase0489.polarize_spatialEnergy : ∀ {f g : ℝ → ℝ},
+  Measurable f →
+    Measurable g →
+      (RHFormDomain.energy fun x => ↑(f x)) < ⊤ →
+        (RHFormDomain.energy fun x => ↑(g x)) < ⊤ →
+          RHStepA2G2.polarize RHAutocorrEnergy.spatialEnergy f g =
+            1 / 4 * ∫ (x : ℝ) (y : ℝ), RH_GammaFinalFormula.K_kernel |x - y| * (f x - f y) * (g x - g y)
+=== RHSpatialDensity0490.spatialEnergyDensityIntegral
+RHSpatialDensity0490.spatialEnergyDensityIntegral : RHStepA2G2.SpatialEnergyDensityIntegral
+=== RHSpatialPolarization0489.spatialEnergyPolarization
+RHSpatialPolarization0489.spatialEnergyPolarization : RHStepA2G2.SpatialEnergyPolarization
+=== RHSpatialToTargetBridge.summable_of_test
+RHSpatialToTargetBridge.summable_of_test : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) →
+      f ≠ 0 → Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ
+=== RHSpectralGapAdapter.g3_of_spectral
+RHSpectralGapAdapter.g3_of_spectral : RHSpectralGapAdapter.SpectralInputs →
+  RHConditionalLog5.G3 RHConcreteParameters.concrete
+=== RHSpectralInputs.g3_unconditional
+RHSpectralInputs.g3_unconditional : RHConditionalLog5.G3 RHConcreteParameters.concrete
+=== RHSpectralInputs.spectral_inputs_unconditional
+RHSpectralInputs.spectral_inputs_unconditional : RHSpectralGapAdapter.SpectralInputs
+=== RHStepA2G2.g2_rhs_col_tail
+RHStepA2G2.g2_rhs_col_tail : ∀ (o : Bool) (u : ℝ → ℝ),
+  RHConditionalLog5.Test u →
+    ∑ i, RHConditionalLog5.mixed o u i * RHConditionalLog5.band o u i +
+        inner ℝ
+          (RHResidualCertificate.residual_vector (RHConditionalLog5.columnResidual o) (RHConditionalLog5.alpha o u))
+          (RHConditionalLog5.far o u) =
+      ∑ j,
+        RHConditionalLog5.alpha o u j *
+          inner ℝ (RHConditionalLog5.embed (RHConditionalLog5.col o j))
+            (RHConditionalLog5.embed (RHConditionalLog5.tail o u))
+=== RHStepA2G2.polarize_targetQ_L2_zero
+RHStepA2G2.polarize_targetQ_L2_zero : ∀ (o : Bool) (u : ℝ → ℝ),
+  RHConditionalLog5.Test u →
+    RHStepA2G2.polarize RHStepA2G2.targetQ_L2 (RHConditionalLog5.low o u) (RHConditionalLog5.tail o u) = 0
+=== RHStepA2G2.polarize_targetQ_real
+RHStepA2G2.polarize_targetQ_real : ∀ (f g : ℝ → ℝ),
+  RHStepA2G2.polarize RHTargetFormBinding.targetQ_real f g =
+    RHStepA2G2.polarize RHStepA2G2.targetQ_L2 f g + RHStepA2G2.polarize RHStepA2G2.targetQ_energy f g +
+        (RHStepA2G2.polarize RHStepA2G2.targetQ_cosh f g - RHStepA2G2.polarize RHStepA2G2.targetQ_sinh f g) -
+      RHStepA2G2.polarize RHStepA2G2.targetQ_prime f g
+=== RHSxScale0516.gam_x
+RHSxScale0516.gam_x : ∀ (i k : ℕ),
+  ∫ (x : ℝ), RHInterface0516.Sx i x * RHInterface0516.Sx k x =
+    RHLog5Bridge.halfWidth * (RHRpExact0506.cc i * RHRpExact0506.cc k) *
+      ∫ (u : ℝ) in -1..1, RHSingDef0516.phi i u * RHSingDef0516.phi k u
+=== RHSxScale0516.s_x
+RHSxScale0516.s_x : ∀ (i k : ℕ),
+  ∫ (x : ℝ), RHInterface0516.Sx i x * RHConditionalLog5.basis k x =
+    RHLog5Bridge.halfWidth * (RHRpExact0506.cc i * RHRpExact0506.cc k) *
+      ∫ (u : ℝ) in -1..1, RHSingDef0516.phi i u * RHLeg0503.p k u
+=== RHT5Final0512.G5c_concrete
+RHT5Final0512.G5c_concrete : RHCaps0494.G5c RHConcreteParameters.concrete RHT5Final0512.capsNew
+=== RHTargetFormBinding.targetQ_pos_of_real_pos
+RHTargetFormBinding.targetQ_pos_of_real_pos : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) →
+      f ≠ 0 →
+        (∀ (u : ℝ → ℝ),
+            ContDiff ℝ 2 u →
+              (∀ (x : ℝ), u x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) → u ≠ 0 → 0 < RHTargetFormBinding.targetQ_real u) →
+          (∀ (u : ℝ → ℝ),
+              ContDiff ℝ 2 u →
+                (∀ (x : ℝ), u x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) → 0 ≤ RHTargetFormBinding.targetQ_real u) →
+            0 < RHTargetLog5.targetQ f
+=== RHTargetFormBinding.targetQ_real
+RHTargetFormBinding.targetQ_real : (ℝ → ℝ) → ℝ
+=== RHTargetFormBinding.targetQ_split
+RHTargetFormBinding.targetQ_split : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) →
+      RHTargetLog5.targetQ f =
+        (RHTargetFormBinding.targetQ_real fun x => (f x).re) + RHTargetFormBinding.targetQ_real fun x => (f x).im
+=== RHTargetLog5.targetQ
+RHTargetLog5.targetQ : (ℝ → ℂ) → ℝ
+=== RHTargetLog5.target_spatial_identity
+RHTargetLog5.target_spatial_identity : ∀ (f : ℝ → ℂ),
+  ContDiff ℝ 2 f →
+    (∀ (x : ℝ), f x ≠ 0 → |x| ≤ RHLog5Bridge.halfWidth) → (Zeta23.zetaZeroConfig.W f f).re = RHTargetLog5.targetQ f
+=== RHTestRestriction.testLp_energy
+@RHTestRestriction.testLp_energy : ∀ {f : ℝ → ℂ} (hf : Continuous f) (L : ℝ),
+  RHFormDomain.intervalEnergy L (RHTestRestriction.testLp hf L) = RHFormDomain.energy (RHFormDomain.extend L f)
+=== RHTestRestriction.testLp_mem
+@RHTestRestriction.testLp_mem : ∀ {f : ℝ → ℂ} (hf : ContDiff ℝ 1 f) {L : ℝ},
+  0 ≤ L → RHFormDomain.InDomain L (RHTestRestriction.testLp ⋯ L)
+=== RHThreePoint.defect_sos
+RHThreePoint.defect_sos : ∀ (α β r lam x y z : ℝ),
+  0 < r →
+    lam = 2 * α / r →
+      lam = β + α * r →
+        lam * (x ^ 2 + y ^ 2 + z ^ 2) - RHThreePoint.form α β x y z =
+          α / r * ((r * x - y) ^ 2 + (r * z - y) ^ 2) + β * (x - z) ^ 2
+=== RHThreePoint.perpendicular_nonpos
+RHThreePoint.perpendicular_nonpos : ∀ (α β r lam x y z : ℝ),
+  0 ≤ α → 0 ≤ β → 0 < r → lam = 2 * α / r → lam = β + α * r → x + r * y + z = 0 → RHThreePoint.form α β x y z ≤ 0
+=== RHThreePoint.shifted_gap
+RHThreePoint.shifted_gap : ∀ (α β r lam x y z t : ℝ),
+  0 ≤ α →
+    0 ≤ β →
+      0 < r →
+        lam = 2 * α / r →
+          lam = β + α * r →
+            x + r * y + z = 0 →
+              lam * (x ^ 2 + y ^ 2 + z ^ 2) ≤
+                lam * ((x + t) ^ 2 + (y + r * t) ^ 2 + (z + t) ^ 2) - RHThreePoint.form α β (x + t) (y + r * t) (z + t)
+=== RHTruncation0520.g64_approx
+@RHTruncation0520.g64_approx : ∀ {s : ℝ},
+  0 < s →
+    s ≤ Real.log 5 →
+      |RH_Rebaseline.T_tail s + Real.log s + 2 * RHPolyL0500.ev RHTruncation0520.g64 (s / 2) -
+            (2 * Real.log 2 + Real.pi / 2)| ≤
+        1 / 10 ^ 18
+=== RHTruncation0520.rk63_approx
+@RHTruncation0520.rk63_approx : ∀ {s : ℝ},
+  0 < s → s ≤ Real.log 5 → |RHColDecomp0499.Rk s - RHPolyL0500.ev RHTruncation0520.q63 (s / 2)| ≤ 1 / 10 ^ 18
+=== RHTuckIntegral.monomial_integral
+RHTuckIntegral.monomial_integral : ∀ (n : ℕ) {x : ℝ},
+  x ∈ Set.Icc (-1) 1 → ↑(∫ (y : ℝ) in -1..1, (x ^ n - y ^ n) / |x - y|) = Polynomial.eval (↑x) (RHTuckMonomial.image n)
+=== RHTuckLp.unit_hermitian
+RHTuckLp.unit_hermitian : ∀ (p q : Polynomial ℂ),
+  inner ℂ ((RHPolynomialLpMap.toLp 1 ⋯) p) ((RHPolynomialLpMap.toLp 1 ⋯) (RHTuckLinear.operator q)) =
+    inner ℂ ((RHPolynomialLpMap.toLp 1 ⋯) (RHTuckLinear.operator p)) ((RHPolynomialLpMap.toLp 1 ⋯) q)
+=== RHTuckMonomial.coeff_diag
+RHTuckMonomial.coeff_diag : ∀ (n : ℕ), (RHTuckMonomial.image n).coeff n = 2 * ↑(harmonic n)
+=== RHTuckScaledEigen.integral_eigen
+@RHTuckScaledEigen.integral_eigen : ∀ {L : ℝ},
+  0 < L →
+    ∀ (n : ℕ) {x : ℝ},
+      x ∈ Set.Icc (-L) L →
+        ∫ (y : ℝ) in -L..L,
+            (Polynomial.eval (↑x) (RHLegendreDirections.directionPoly L n) -
+                Polynomial.eval (↑y) (RHLegendreDirections.directionPoly L n)) /
+              ↑|x - y| =
+          2 * ↑(harmonic n) * Polynomial.eval (↑x) (RHLegendreDirections.directionPoly L n)
+=== RHTuckUnitEigen.eigen
+RHTuckUnitEigen.eigen : ∀ (n : ℕ),
+  RHTuckLinear.operator (RHLegendreDirections.directionPoly 1 n) =
+    (2 * ↑(harmonic n)) • RHLegendreDirections.directionPoly 1 n
+=== RHUniform0579.At
+RHUniform0579.At : Bool → Matrix RHConditionalLog5.I RHConditionalLog5.I ℝ
+=== RHUniform0579.Dc
+RHUniform0579.Dc : RHConditionalLog5.Parameters → Bool → ℝ
+=== RHUniform0579.c0
+RHUniform0579.c0 : RHConditionalLog5.Parameters → Bool → ℝ
+=== RHUniform0579.c0_pos
+RHUniform0579.c0_pos : ∀ (P : RHConditionalLog5.Parameters) (o : Bool), 0 < RHUniform0579.c0 P o
+=== RHUniform0579.cUniform
+RHUniform0579.cUniform : ℝ
+=== RHUniform0579.cUniform_pos
+RHUniform0579.cUniform_pos : 0 < RHUniform0579.cUniform
+=== RHUniform0579.coef_bound
+RHUniform0579.coef_bound : ∀ (P : RHConditionalLog5.Parameters) (o : Bool),
+  9 / 1000 / 2 ≤
+    999 / 1000 - (1 / (1 - RHUniform0579.eps P o) - 1) * RHUniform0579.kappa P o -
+      1 / (1 - RHUniform0579.eps P o) * (99 / 100)
+=== RHUniform0579.component_lower_of_gates
+RHUniform0579.component_lower_of_gates : ∀ (P : RHConditionalLog5.Parameters),
+  RHConditionalLog5.G1 P →
+    RHConditionalLog5.G2 P →
+      RHConditionalLog5.G3 P →
+        RHConditionalLog5.G4 P →
+          RHCaps0494.G5c P RHT5Final0512.capsNew →
+            RHCaps0494.G6c P RHT5Final0512.capsNew →
+              ∀ (o : Bool) (u : ℝ → ℝ),
+                RHConditionalLog5.Test u →
+                  RHUniform0579.c0 P o * ‖RHConditionalLog5.embed (RHConditionalLog5.component o u)‖ ^ 2 ≤
+                    RHTargetFormBinding.targetQ_real (RHConditionalLog5.component o u)
+=== RHUniform0579.component_norm_sq
+RHUniform0579.component_norm_sq : ∀ (o : Bool) (u : ℝ → ℝ),
+  RHConditionalLog5.Test u →
+    ‖RHConditionalLog5.embed (RHConditionalLog5.component o u)‖ ^ 2 =
+      ∑ i, RHConditionalLog5.alpha o u i ^ 2 + ‖RHConditionalLog5.embed (RHConditionalLog5.tail o u)‖ ^ 2
+=== RHUniform0579.component_quantitative
+RHUniform0579.component_quantitative : ∀ (P : RHConditionalLog5.Parameters),
+  RHConditionalLog5.G1 P →
+    RHConditionalLog5.G2 P →
+      RHConditionalLog5.G3 P →
+        RHConditionalLog5.G4 P →
+          RHCaps0494.G5c P RHT5Final0512.capsNew →
+            RHCaps0494.G6c P RHT5Final0512.capsNew →
+              ∀ (o : Bool) (u : ℝ → ℝ),
+                RHConditionalLog5.Test u →
+                  9 / 1000 / 2 * ∑ i, P.coordinates o u i ^ 2 +
+                      RHUniform0579.eps P o * RHConditionalLog5.dN o *
+                        ‖RHConditionalLog5.embed (RHConditionalLog5.tail o u)‖ ^ 2 ≤
+                    RHTargetFormBinding.targetQ_real (RHConditionalLog5.component o u)
+=== RHUniform0579.eps
+RHUniform0579.eps : RHConditionalLog5.Parameters → Bool → ℝ
+=== RHUniform0579.eps_lt_one
+RHUniform0579.eps_lt_one : ∀ (P : RHConditionalLog5.Parameters) (o : Bool), RHUniform0579.eps P o < 1
+=== RHUniform0579.eps_pos
+RHUniform0579.eps_pos : ∀ (P : RHConditionalLog5.Parameters) (o : Bool), 0 < RHUniform0579.eps P o
+=== RHUniform0579.frob
+RHUniform0579.frob : Matrix RHConditionalLog5.I RHConditionalLog5.I ℝ → ℝ
+=== RHUniform0579.hilbert_eps
+@RHUniform0579.hilbert_eps : ∀ {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace ℝ E] (r z : E)
+  {dM ε : ℝ}, 0 < dM → ε < 1 → -(‖r‖ ^ 2 / ((1 - ε) * dM)) + ε * dM * ‖z‖ ^ 2 ≤ 2 * inner ℝ r z + dM * ‖z‖ ^ 2
+=== RHUniform0579.kappa
+RHUniform0579.kappa : RHConditionalLog5.Parameters → Bool → ℝ
+=== RHUniform0579.kappa_nonneg
+RHUniform0579.kappa_nonneg : ∀ (P : RHConditionalLog5.Parameters) (o : Bool), 0 ≤ RHUniform0579.kappa P o
+=== RHUniform0579.low_norm_sq
+RHUniform0579.low_norm_sq : ∀ (o : Bool) (u : ℝ → ℝ),
+  ‖RHConditionalLog5.embed (RHConditionalLog5.low o u)‖ ^ 2 = ∑ i, RHConditionalLog5.alpha o u i ^ 2
+=== RHUniform0579.mixed_eq_At_mulVec
+RHUniform0579.mixed_eq_At_mulVec : ∀ (o : Bool) (u : ℝ → ℝ),
+  RHConditionalLog5.mixed o u = (RHUniform0579.At o).mulVec (RHConditionalLog5.alpha o u)
+=== RHUniform0579.mulVec_sq_le
+RHUniform0579.mulVec_sq_le : ∀ (M : Matrix RHConditionalLog5.I RHConditionalLog5.I ℝ) (x : RHConditionalLog5.I → ℝ),
+  ∑ i, M.mulVec x i ^ 2 ≤ RHUniform0579.frob M * ∑ j, x j ^ 2
+=== RHUniform0579.parity_integral_sq
+RHUniform0579.parity_integral_sq : ∀ (u : ℝ → ℝ),
+  RHConditionalLog5.Test u →
+    ∫ (x : ℝ), u x ^ 2 =
+      (∫ (x : ℝ), RHConditionalLog5.component false u x ^ 2) + ∫ (x : ℝ), RHConditionalLog5.component true u x ^ 2
+=== RHUniform0579.scalar_eps
+@RHUniform0579.scalar_eps : ∀ {w ε m b : ℝ},
+  0 < w → ε < 1 → -(m ^ 2 / ((1 - ε) * w)) + ε * w * b ^ 2 ≤ 2 * m * b + w * b ^ 2
+=== RHUniform0579.uniform_component
+RHUniform0579.uniform_component : ∃ c,
+  0 < c ∧
+    ∀ (o : Bool) (u : ℝ → ℝ),
+      RHConditionalLog5.Test u →
+        c * ‖RHConditionalLog5.embed (RHConditionalLog5.component o u)‖ ^ 2 ≤
+          RHTargetFormBinding.targetQ_real (RHConditionalLog5.component o u)
+=== RHUniform0579.uniform_real
+RHUniform0579.uniform_real : ∃ c,
+  0 < c ∧ ∀ (u : ℝ → ℝ), RHConditionalLog5.Test u → c * ∫ (x : ℝ), u x ^ 2 ≤ RHTargetFormBinding.targetQ_real u
+=== RHUniform0579.uniform_target_log5
+RHUniform0579.uniform_target_log5 : ∃ c,
+  0 < c ∧
+    ∀ (f : ℝ → ℂ),
+      ContDiff ℝ 2 f →
+        (∀ (x : ℝ), f x ≠ 0 → |x| ≤ Real.log 5 / 2) →
+          (Summable fun ρ => Zeta23.zetaZeroConfig.Wsummand f f ↑ρ) ∧
+            c * ∫ (x : ℝ), ‖f x‖ ^ 2 ≤ (Zeta23.zetaZeroConfig.W f f).re
+=== RHWeilColumnCandidate.column
+RHWeilColumnCandidate.column : ℝ → Polynomial ℝ → ℝ → ℝ
+=== RHWeilShift.c_even
+RHWeilShift.c_even : ℝ
+=== RHWeilShift.c_odd
+RHWeilShift.c_odd : ℝ
+=== RH_GammaFourierBridge.integrable_rhs_kernel
+RH_GammaFourierBridge.integrable_rhs_kernel : ∀ (h : ℝ → ℝ) {Λ : ℝ},
+  ContDiff ℝ 2 h →
+    (∀ (u : ℝ), h u ≠ 0 → |u| ≤ Λ) →
+      (∀ (u : ℝ), h (-u) = h u) →
+        MeasureTheory.IntegrableOn (fun x => RH_GammaSqrtBound.K_kernel x * (h 0 - h x)) (Set.Ioi 0)
+          MeasureTheory.volume
+=== RH_GammaFourierBridge.weighted_fubini_even_h
+RH_GammaFourierBridge.weighted_fubini_even_h : ∀ (h : ℝ → ℝ) {Λ : ℝ},
+  ContDiff ℝ 2 h →
+    (∀ (u : ℝ), h u ≠ 0 → |u| ≤ Λ) →
+      (∀ (u : ℝ), h (-u) = h u) →
+        ∫ (t : ℝ),
+            (Zeta23.paperFT (fun u => ↑(h u)) ↑t).re *
+              ((↑(1 / 4) + Complex.I * ↑(t / 2)).digamma.re - (↑(1 / 4)).digamma.re) =
+          2 * Real.pi * ∫ (x : ℝ) in Set.Ioi 0, RH_GammaSqrtBound.K_kernel x * (h 0 - h x)
+=== RH_GammaSqrtBound.digamma_diff_eq_kernel_integral
+RH_GammaSqrtBound.digamma_diff_eq_kernel_integral : ∀ (t : ℝ),
+  (↑(1 / 4) + Complex.I * ↑(t / 2)).digamma.re - (↑(1 / 4)).digamma.re =
+    ∫ (x : ℝ) in Set.Ioi 0, (1 - Real.cos (t * x)) * RH_GammaSqrtBound.K_kernel x
+=== RH_GammaWeightedFubini.dom_integrable
+RH_GammaWeightedFubini.dom_integrable : ∀ (a : ℝ → ℝ),
+  MeasureTheory.Integrable (fun t => |a t| * √|t|) MeasureTheory.volume →
+    MeasureTheory.Integrable (fun p => 2 * |a p.1| * √|p.1| * (√p.2 * RH_GammaSqrtBound.K_kernel p.2))
+      (MeasureTheory.volume.prod (MeasureTheory.volume.restrict (Set.Ioi 0)))
+=== RH_GammaWeightedFubini.integrable_H_prod
+RH_GammaWeightedFubini.integrable_H_prod : ∀ (a : ℝ → ℝ),
+  Measurable a →
+    MeasureTheory.Integrable (fun t => |a t| * √|t|) MeasureTheory.volume →
+      MeasureTheory.Integrable (RH_GammaWeightedFubini.H_integrand a)
+        (MeasureTheory.volume.prod (MeasureTheory.volume.restrict (Set.Ioi 0)))
+=== RH_LiteratureBridge.G_freq_re_eq_neg_A_arch
+RH_LiteratureBridge.G_freq_re_eq_neg_A_arch : ∀ (h : ℝ → ℝ) {b : ℝ},
+  0 < b →
+    ContDiff ℝ 2 h →
+      (∀ (u : ℝ), h u ≠ 0 → |u| ≤ b) →
+        (∀ (u : ℝ), h (-u) = h u) → (RH_LiteratureBridge.G_freq fun x => ↑(h x)).re = -RH_LiteratureBridge.A_arch b h
+=== RH_LiteratureBridge.W_real
+RH_LiteratureBridge.W_real : ℝ → (ℝ → ℝ) → ℝ
+=== RH_LiteratureBridge.pole_term_bridge
+@RH_LiteratureBridge.pole_term_bridge : ∀ {h : ℝ → ℝ} {b : ℝ},
+  0 < b →
+    Continuous h →
+      (∀ (x : ℝ), h (-x) = h x) →
+        (tsupport fun x => ↑(h x)) ⊆ Set.Icc (-b) b →
+          (Zeta23.paperFT (fun x => ↑(h x)) (Complex.I / 2) + Zeta23.paperFT (fun x => ↑(h x)) (-Complex.I / 2)).re =
+            RH_LiteratureBridge.P_pole b h
+=== RH_LiteratureBridge.prime_term_bridge
+@RH_LiteratureBridge.prime_term_bridge : ∀ {h : ℝ → ℝ} {b : ℝ},
+  0 < b →
+    (∀ (x : ℝ), h (-x) = h x) →
+      (tsupport fun x => ↑(h x)) ⊆ Set.Icc (-b) b →
+        (∑' (n : ℕ), ↑(ArithmeticFunction.vonMangoldt n / √↑n) * (↑(h (Real.log ↑n)) + ↑(h (-Real.log ↑n)))).re =
+          2 * ∑' (n : ℕ), ArithmeticFunction.vonMangoldt n / √↑n * h (Real.log ↑n)
+=== RH_LiteratureBridge.weilTest_contDiff_of_c1
+@RH_LiteratureBridge.weilTest_contDiff_of_c1 : ∀ {f g : ℝ → ℂ},
+  ContDiff ℝ 1 f → ContDiff ℝ 1 g → HasCompactSupport f → HasCompactSupport g → ContDiff ℝ 2 (Zeta23.EF.weilTest f g)
+=== RH_LiteratureBridge.weil_bridge_of_c1
+RH_LiteratureBridge.weil_bridge_of_c1 : ∀ (Z : Zeta23.ZeroConfig),
+  Zeta23.EF.EF_lit Z →
+    ∀ {f g : ℝ → ℂ},
+      ContDiff ℝ 1 f →
+        ContDiff ℝ 1 g →
+          HasCompactSupport f →
+            HasCompactSupport g →
+              (Summable fun ρ => Z.Wsummand f g ↑ρ) ∧ Z.W f g = Zeta23.EF.literatureRHS (Zeta23.EF.weilTest f g)
+=== RH_Rebaseline.integral_Ioi_K_kernel_eq_T_tail
+@RH_Rebaseline.integral_Ioi_K_kernel_eq_T_tail : ∀ {b : ℝ},
+  0 < b → ∫ (x : ℝ) in Set.Ioi b, RH_Rebaseline.K_kernel x = RH_Rebaseline.T_tail b
+=== Real.exp_bound
+@Real.exp_bound : ∀ {x : ℝ},
+  |x| ≤ 1 →
+    ∀ {n : ℕ},
+      0 < n → |Real.exp x - ∑ m ∈ Finset.range n, x ^ m / ↑m.factorial| ≤ |x| ^ n * (↑n.succ / (↑n.factorial * ↑n))
+=== Zeta23.EF.explicitFormulaPaper_of_lit
+Zeta23.EF.explicitFormulaPaper_of_lit : ∀ (Z : Zeta23.ZeroConfig),
+  Zeta23.EF.EF_lit Z → Zeta23.GammaFacts → Zeta23.ExplicitFormulaPaper Z
+=== Zeta23.EF.literatureRHS
+Zeta23.EF.literatureRHS : (ℝ → ℂ) → ℂ
+=== Zeta23.EF.paperFT_weilTest
+@Zeta23.EF.paperFT_weilTest : ∀ {f g : ℝ → ℂ},
+  Continuous f →
+    Continuous g →
+      HasCompactSupport f →
+        HasCompactSupport g →
+          ∀ (z : ℂ),
+            Zeta23.paperFT (Zeta23.EF.weilTest f g) z =
+              Zeta23.paperFT f z * (starRingEnd ℂ) (Zeta23.paperFT g ((starRingEnd ℂ) z))
+=== Zeta23.EF.weilTest
+Zeta23.EF.weilTest : (ℝ → ℂ) → (ℝ → ℂ) → ℝ → ℂ
+=== Zeta23.WeilEF.EF_lit_zetaZeroConfig
+Zeta23.WeilEF.EF_lit_zetaZeroConfig : Zeta23.EF.EF_lit Zeta23.zetaZeroConfig
+=== Zeta23.ZeroConfig
+Zeta23.ZeroConfig : Type
+=== Zeta23.ZeroConfig.W
+Zeta23.ZeroConfig.W : Zeta23.ZeroConfig → (ℝ → ℂ) → (ℝ → ℂ) → ℂ
+=== Zeta23.ZeroConfig.Wsummand
+Zeta23.ZeroConfig.Wsummand : Zeta23.ZeroConfig → (ℝ → ℂ) → (ℝ → ℂ) → ℂ → ℂ
+=== Zeta23.gammaOf
+Zeta23.gammaOf : ℂ → ℂ
+=== Zeta23.nuX
+Zeta23.nuX : ℝ → ℝ → ℝ
+=== Zeta23.paperFT
+Zeta23.paperFT : (ℝ → ℂ) → ℂ → ℂ
+=== Zeta23.zetaZeroConfig
+Zeta23.zetaZeroConfig : Zeta23.ZeroConfig
+=== Zeta23.zetaZeroConfig.carrier
+Zeta23.zetaZeroConfig.carrier : Set ℂ
+=== analyticOrderAt
+@analyticOrderAt : {𝕜 : Type u_1} →
+  {E : Type u_2} →
+    [inst : NontriviallyNormedField 𝕜] → [inst_1 : NormedAddCommGroup E] → [NormedSpace 𝕜 E] → (𝕜 → E) → 𝕜 → ℕ∞
+=== hasSum_zeta_two
+hasSum_zeta_two : HasSum (fun n => 1 / ↑n ^ 2) (Real.pi ^ 2 / 6)
+=== logDeriv_fun_mul
+@logDeriv_fun_mul : ∀ {𝕜 : Type u_1} {𝕜' : Type u_2} [inst : NontriviallyNormedField 𝕜]
+  [inst_1 : NontriviallyNormedField 𝕜'] [inst_2 : NormedAlgebra 𝕜 𝕜'] {f g : 𝕜 → 𝕜'} (x : 𝕜),
+  f x ≠ 0 →
+    g x ≠ 0 →
+      DifferentiableAt 𝕜 f x → DifferentiableAt 𝕜 g x → logDeriv (fun i => f i * g i) x = logDeriv f x + logDeriv g x
+=== logDeriv_mul
+@logDeriv_mul : ∀ {𝕜 : Type u_1} {𝕜' : Type u_2} [inst : NontriviallyNormedField 𝕜]
+  [inst_1 : NontriviallyNormedField 𝕜'] [inst_2 : NormedAlgebra 𝕜 𝕜'] {f g : 𝕜 → 𝕜'} (x : 𝕜),
+  f x ≠ 0 → g x ≠ 0 → DifferentiableAt 𝕜 f x → DifferentiableAt 𝕜 g x → logDeriv (f * g) x = logDeriv f x + logDeriv g x
+=== riemannZeta
+riemannZeta : ℂ → ℂ

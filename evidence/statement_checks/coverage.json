@@ -1,0 +1,12 @@
+{
+ "cited_names": 231,
+ "covered": 231,
+ "missing": [],
+ "empty_or_error": [],
+ "wrapper_types_equal": {
+  "0527": true,
+  "0580": true
+ },
+ "lean_error_messages": 0,
+ "note": "each block starts with the printed declaration name and its type; names containing the word \"error\" were false positives of the first scan"
+}

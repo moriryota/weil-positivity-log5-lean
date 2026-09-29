@@ -1,0 +1,540 @@
+{
+ "BQ0512": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Bernoulli0465_49": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Bernoulli0465_59": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Bernoulli0465_69": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Bernoulli0465_79": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Bernoulli0465_80": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "CcEncl0510": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Const0521": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0521/gen_const.py"
+  ]
+ },
+ "Constants0467": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0467/generate.py"
+  ]
+ },
+ "Entry00Bounds0495": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Entry22_0505": {
+  "class": "named in the module header",
+  "scripts": [
+   "tools/generators/0505/mirror.py",
+   "tools/generators/0502/legendre_proto.py"
+  ]
+ },
+ "EntryBall0512": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "FF3_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fstage.py"
+  ]
+ },
+ "FFc2_0_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_1_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_2_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_3_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_4_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_5_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_6_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc2_7_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_0_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_1_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_2_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_3_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_4_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_5_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_6_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FFc4_7_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_ffchunk.py"
+  ]
+ },
+ "FY2_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fstage.py"
+  ]
+ },
+ "FY3_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fstage.py"
+  ]
+ },
+ "FY4_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fstage.py"
+  ]
+ },
+ "FamDataA_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fam.py"
+  ]
+ },
+ "FamDataB_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fam.py"
+  ]
+ },
+ "FamDataX_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_fam.py"
+  ]
+ },
+ "FixedCoordinates": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "FixedWeights": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "Gam0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_final.py"
+  ]
+ },
+ "KTabData0515": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0515/gen_nk.py"
+  ]
+ },
+ "MathlibAll0483": {
+  "class": "named in the module header",
+  "scripts": [
+   "tools/generators/0483/gen_umbrella.py",
+   "tools/generators/0483/build_umbrella.py"
+  ]
+ },
+ "MkTabData2_0521": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0521/gen_mk.py"
+  ]
+ },
+ "MkTabData3_0521": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0521/gen_mk.py"
+  ]
+ },
+ "MkTabData4_0521": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0521/gen_mk.py"
+  ]
+ },
+ "MpTabData0515": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0515/gen_mp.py"
+  ]
+ },
+ "NTabData0515": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0515/gen_nk.py"
+  ]
+ },
+ "OO22_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "OO23_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "OO24_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "OO33_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "OO34_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "OO44_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ },
+ "PrRun0511_g0": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups.py"
+  ]
+ },
+ "PrRun0511_g1": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups.py"
+  ]
+ },
+ "PrRun2_0511_g10": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g11": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g12": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g13": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g14": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g15": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g4": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g5": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g6": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g7": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g8": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrRun2_0511_g9": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0511/gen_pr_groups2.py"
+  ]
+ },
+ "PrimeNumeric0470": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0470/generate.py"
+  ]
+ },
+ "Rho0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_final.py"
+  ]
+ },
+ "RkApprox0500": {
+  "class": "named in the module header",
+  "scripts": [
+   "tools/generators/0500/gen_q.py"
+  ]
+ },
+ "RpBall0507_g0": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g1": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g2": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g3": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g4": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g5": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g6": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpBall0507_g7": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0507/gen_groups.py"
+  ]
+ },
+ "RpSpec0512_g0": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g1": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g2": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g3": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g4": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g5": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g6": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "RpSpec0512_g7": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "T5Tab0512_E": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0512/gen_t5final.py"
+  ]
+ },
+ "T5Tab0512_O": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0512/gen_t5final.py"
+  ]
+ },
+ "TpEncl0509": {
+  "class": "not identified",
+  "scripts": []
+ },
+ "TpRun0509_g0": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g1": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g2": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g3": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g4": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g5": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g6": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "TpRun0509_g7": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0509/gen_tp_groups.py"
+  ]
+ },
+ "XX_0522": {
+  "class": "output file name pattern in the script",
+  "scripts": [
+   "tools/generators/0522/gen_oo.py"
+  ]
+ }
+}

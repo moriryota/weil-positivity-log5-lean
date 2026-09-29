@@ -1,0 +1,28 @@
+{
+  "status": "RAW_EVIDENCE_CONFIRMED",
+  "scope": "rh0605/final-001 only (release candidate 0605); not Palomar registration or external endorsement",
+  "archive_sha256": "b32f8164823570a8b4f50db8a794c41b043018cd677cfd079cc1c02ec9633182",
+  "targets": [
+    "RHLog5Release.target_log5",
+    "RHLog5Release.target_log5_uniform"
+  ],
+  "exit_code": 0,
+  "success_markers": [
+    "nanoda kernel accepts the solution",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!"
+  ],
+  "recorded_inputs_before": 161113,
+  "recorded_inputs_after": 161113,
+  "input_maps_identical": true,
+  "exports": {
+    "trusted_sha256": "395a228624ba7ad38400b575215a0291731cf648d8ab6f52f97f801b64183ef2",
+    "candidate_sha256": "395a228624ba7ad38400b575215a0291731cf648d8ab6f52f97f801b64183ef2",
+    "identical": true
+  },
+  "release_lean_files_bound": 503,
+  "recorded_lean_sources_under_run_root": 503,
+  "recorded_lean_sources_not_in_release": [],
+  "comparator_seconds": 22094.124656915665,
+  "total_seconds": 22582.414113521576
+}

@@ -1,0 +1,13 @@
+Weil positivity on a window of width log 5: Lean formalization
+Copyright 2026 Ryota Mori
+
+This project is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes software developed by Anthropic, PBC, as part of the formal-math
+repository (Zeta23), licensed under the Apache License, Version 2.0. Its original notices
+are preserved in licenses/Zeta23/. Five of its proof files were modified for compatibility
+with Lean 4.34.0 / Mathlib; the modifications are marked in the files.
+
+This product includes software from girving/interval, licensed under the Apache License,
+Version 2.0. Its license text is preserved in licenses/Interval/. Four of the included files
+were modified for compatibility; the modifications are marked in the files.

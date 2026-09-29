@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Weil positivity on a window of width log 5: Lean formalization"
+authors:
+  - family-names: Mori
+    given-names: Ryota
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-09-29"
+repository-code: "https://github.com/moriryota/weil-positivity-log5-lean"
+keywords:
+  - Lean 4
+  - formal verification
+  - Weil explicit formula
+  - Riemann zeta function

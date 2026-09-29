@@ -1,0 +1,12 @@
+name = "RHTrusted0540"
+version = "0.1.0"
+
+[[require]]
+name = "mathlib"
+path = "../deps/leancert/.lake/packages/mathlib"
+
+[[lean_lib]]
+name = "RHTrusted0540"
+roots = []
+globs = ["Challenge", "Zeta23.Defs", "Zeta23.Defs.Counting", "Zeta23.Hypotheses", "Zeta23.Statement", "Zeta23.Statement.Seam", "Zeta23.Statement.SeamClosed", "Zeta23.ZetaReflect"]
+precompileModules = false

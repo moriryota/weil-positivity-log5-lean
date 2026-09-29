@@ -1,0 +1,3 @@
+deps/*
+**/.lake/
+**/__pycache__/

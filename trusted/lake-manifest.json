@@ -1,0 +1,90 @@
+{
+  "version": "1.2.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "name": "mathlib",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/mathlib",
+      "scope": "",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "plausible",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/plausible",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "LeanSearchClient",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/LeanSearchClient",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "importGraph",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/importGraph",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "proofwidgets",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/proofwidgets",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "aesop",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/aesop",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "Qq",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/Qq",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "batteries",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/batteries",
+      "scope": "leanprover-community",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    },
+    {
+      "name": "Cli",
+      "type": "path",
+      "dir": "../deps/leancert/.lake/packages/Cli",
+      "scope": "leanprover",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "manifestFile": "lake-manifest.json"
+    }
+  ],
+  "name": "RHTrusted0540",
+  "lakeDir": ".lake",
+  "fixedToolchain": true
+}

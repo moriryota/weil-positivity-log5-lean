@@ -1,0 +1,92 @@
+--- upstream/Interval/EulerMaclaurin/DerivUnderIntegral.lean
++++ ported/Interval/EulerMaclaurin/DerivUnderIntegral.lean
+@@ -26,7 +26,7 @@
+     have e : (fun t ↦ f t x) = uncurry f ∘ (fun t ↦ (t,x)) := rfl
+     simp only [f']
+     rw [← fderiv_apply_one_eq_deriv, e, fderiv_comp]
+-    · nth_rw 2 [(hasFDerivAt_prodMk_left _ _).fderiv]
++    · rw [(hasFDerivAt_prodMk_left _ _).fderiv]
+       simp only [ContinuousLinearMap.coe_comp', Function.comp_apply, ContinuousLinearMap.inl_apply]
+     · exact (fc.differentiable (by decide)).differentiableAt
+     · simp only [differentiableAt_fun_id, differentiableAt_const, DifferentiableAt.prodMk]
+@@ -38,8 +38,8 @@
+   have pn : (closedBall t 1 ×ˢ Icc a b).Nonempty := by use (t,a); simp [ab]
+   obtain ⟨m,_,mm⟩ := pc.exists_isMaxOn pn dc.norm.continuousOn
+   set c := ‖uncurry f' m‖
+-  refine (hasDerivAt_integral_of_dominated_loc_of_deriv_le (𝕜 := ℝ) (bound := fun _ ↦ c) (ε := 1)
+-    zero_lt_one ?_ ?_ ?_ ?_ ?_ ?_).2
++  refine (hasDerivAt_integral_of_dominated_loc_of_deriv_le (𝕜 := ℝ) (bound := fun _ ↦ c) (s := closedBall t 1)
++    (Metric.closedBall_mem_nhds _ zero_lt_one) ?_ ?_ ?_ ?_ ?_ ?_).2
+   · filter_upwards []
+     intro t
+     exact fc.continuous.along_snd.aestronglyMeasurable
+@@ -49,7 +49,7 @@
+     filter_upwards []
+     intro t tm x xm
+     simp only [isMaxOn_iff, mem_prod, Metric.mem_closedBall, mem_Icc, and_imp, Prod.forall] at mm
+-    exact mm _ _ xm.le tm.1.le tm.2
++    exact mm _ _ xm tm.1.le tm.2
+   · apply MeasureTheory.integrable_const
+   · filter_upwards []
+     intro x t _
+--- upstream/Interval/EulerMaclaurin/EulerMaclaurin.lean
++++ ported/Interval/EulerMaclaurin/EulerMaclaurin.lean
+@@ -33,15 +33,9 @@
+ lemma integral_saw_eq_integral_presaw :
+     ∫ x : ℝ in a..a + 1, saw s x • iteratedDerivWithin s f t x =
+     ∫ x : ℝ in a..a + 1, presaw s a x • iteratedDerivWithin s f t x := by
+-  apply intervalIntegral.integral_congr_ae
+-  have e : uIoc (a : ℝ) (a + 1) =ᵐ[volume] Ioo a (a + 1) := by
+-    rw [uIoc_of_le]
+-    · exact MeasureTheory.Ioo_ae_eq_Ioc.symm
+-    · simp only [(lt_add_one _).le]
+-  simp only [← MeasureTheory.ae_restrict_iff' measurableSet_uIoc,
+-    MeasureTheory.ae_restrict_congr_set e, MeasureTheory.ae_restrict_iff' measurableSet_Ioo]
+-  filter_upwards
++  apply intervalIntegral.integral_congr_Ioo_of_le (by linarith)
+   intro x m
++  dsimp only
+   rw [saw_eqOn (a := a)]
+   exact Ioo_subset_Ico_self m
+ 
+@@ -123,7 +117,7 @@
+     trapezoid_sum f a (n + 1) = trapezoid_sum f a n + (2⁻¹ : ℝ) • (f (a + n) + f (a + n + 1)) :=
+   rfl
+ 
+-lemma ae_ne {α : Type*} [MeasurableSpace α] (μ : MeasureTheory.Measure α) [MeasureTheory.NoAtoms μ]
++lemma ae_ne {α : Type*} [MeasurableSpace α] (μ : MeasureTheory.Measure α) [MeasureTheory.NullSingletonClass μ]
+     (x : α) : ∀ᵐ y ∂μ, y ≠ x := by
+   simp only [Filter.Eventually, ne_eq, MeasureTheory.mem_ae_iff, compl_ne_eq_singleton,
+     MeasureTheory.measure_singleton]
+--- upstream/Interval/EulerMaclaurin/IteratedDerivArith.lean
++++ ported/Interval/EulerMaclaurin/IteratedDerivArith.lean
+@@ -7,7 +7,7 @@
+ variable {𝕜 E : Type*} [NontriviallyNormedField 𝕜] [NormedAddCommGroup E] [NormedSpace 𝕜 E]
+ variable {f : 𝕜 → E}
+ 
+-lemma iteratedDeriv_mul {n : ℕ} (fc : ContDiff 𝕜 n f) {y : 𝕜} :
++lemma interval_iteratedDeriv_mul {n : ℕ} (fc : ContDiff 𝕜 n f) {y : 𝕜} :
+     iteratedDeriv n (fun x ↦ x • f x) y =
+       y • iteratedDeriv n f y + n • iteratedDeriv (n - 1) f y := by
+   induction n generalizing f with
+--- upstream/Interval/EulerMaclaurin/LHopital.lean
++++ ported/Interval/EulerMaclaurin/LHopital.lean
+@@ -15,7 +15,9 @@
+ variable {𝕜 : Type} [NontriviallyNormedField 𝕜]
+ 
+ @[bound] lemma norm_sub_norm_le_norm_add {E : Type*} [SeminormedAddGroup E] (x y : E) :
+-    ‖x‖ - ‖y‖ ≤ ‖x + y‖ := by simpa using norm_sub_norm_le x (-y)
++    ‖x‖ - ‖y‖ ≤ ‖x + y‖ := by
++  have h := norm_add_le (x + y) (-y)
++  exact sub_le_iff_le_add.mpr (by simpa using h)
+ 
+ attribute [bound] norm_add_le
+ 
+@@ -61,6 +63,7 @@
+     contrapose lo
+     simp only [lo, norm_zero, ge_iff_le, not_le]
+     bound
++  rw [show -(f x / g x) + f' / g' = -(f x / g x - f' / g') by ring, norm_neg]
+   calc ‖f x / g x - f' / g'‖
+     _ = ‖(f x - y * f') / g x + (y * f' / g x - f' / g')‖ := by ring_nf
+     _ ≤ ‖(f x - y * f') / g x‖ + ‖y * f' / g x - f' / g'‖ := by bound

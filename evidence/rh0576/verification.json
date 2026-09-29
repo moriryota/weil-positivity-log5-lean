@@ -1,0 +1,43 @@
+{
+  "archive_sha256": "e7a8d0f200bc8298d015c2c63d37022f756dcc760b55268fc7aa2bbf1c10b7ae",
+  "input_count": 150981,
+  "inputs_unchanged": true,
+  "config": {
+    "challenge_module": "Challenge",
+    "solution_module": "Solution",
+    "theorem_names": [
+      "RHLog5Audit0527.target_log5"
+    ],
+    "definition_names": [],
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "enable_nanoda": true
+  },
+  "result": {
+    "started": 1790517925.289271,
+    "ended": 1790542945.8153508,
+    "exit_code": 0
+  },
+  "markers": {
+    "nanoda kernel accepts the solution": true,
+    "Lean default kernel accepts the solution": true,
+    "Your solution is okay!": true
+  },
+  "challenge_exports": {
+    "trusted_sha256": "958f8b2a11ef96723a4726d18a04a06ebd256199094ba26c531f1cca011cac62",
+    "candidate_sha256": "958f8b2a11ef96723a4726d18a04a06ebd256199094ba26c531f1cca011cac62",
+    "identical": true
+  },
+  "state": {
+    "status": "COMPARATOR_ACCEPTED_REVIEW_REQUIRED",
+    "scope": "official comparator for fixed 0540 snapshot; not registry/Palomar registration",
+    "started": 1790517272.8769324,
+    "phase": "comparator",
+    "child_exit_code": 0,
+    "inputs_unchanged": true,
+    "ended": 1790543357.36416
+  }
+}

@@ -1,0 +1,11 @@
+--- reference/formal-math/Zeta23/Taper/Fourier.lean
++++ snapshot/Zeta23/Taper/Fourier.lean
+@@ -24,7 +24,7 @@
+ * smoothness  Real.contDiff_fourier  (Mathlib/Analysis/Fourier/FourierTransformDeriv.lean);
+ * integrable_inv_one_add_sq  (dominating function (1+r²)⁻¹ for the decay |φ̂(r)| ≤ min(C₀, C₂/r²)).
+ -/
+-import Mathlib
++import MathlibAll0483
+ import Zeta23.Taper.Strip
+ 
+ open Complex MeasureTheory Real Set Filter Topology

@@ -1,0 +1,25 @@
+{
+  "status": "RAW_EVIDENCE_CONFIRMED",
+  "scope": "rh0581/final-001 only; not public 0588, Palomar registration or external endorsement",
+  "archive_sha256": "f2ea93e04d1884546d58f6efc2ca4759803ef2fa3b73073e03d41d8ab16619f3",
+  "target": "RHLog5Uniform0580.target_log5_uniform",
+  "exit_code": 0,
+  "success_markers": [
+    "nanoda kernel accepts the solution",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!"
+  ],
+  "recorded_inputs_before": 154024,
+  "recorded_inputs_after": 154024,
+  "input_maps_identical": true,
+  "exports": {
+    "trusted_sha256": "089cc8dc0af4b1892fd1fb7ee1bd92665162150d6fbd549dab543f08b84160ec",
+    "candidate_sha256": "089cc8dc0af4b1892fd1fb7ee1bd92665162150d6fbd549dab543f08b84160ec",
+    "identical": true
+  },
+  "uniform_sources": {
+    "/home/rhcheck/palomar0389/rh0581/candidate/Uniform0579.lean": "e3c84da076ee2a951822847e99144eed15e1f9be7b485a62d18fd2404ed8587a"
+  },
+  "comparator_seconds": 22104.121513605118,
+  "total_seconds": 22838.929807186127
+}
