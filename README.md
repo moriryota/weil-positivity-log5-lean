@@ -2,6 +2,11 @@
 
 These sources were built on Linux and verified with the Lean FRO comparator; both the NanoDa kernel and the standard Lean kernel accepted both theorems (run `rh0605/final-001`, see "Status" and `evidence/`). The verification was run by the author; it is not a review by the tool developers or any other organization, and the mathematics has not yet been reviewed by human experts. No claim of the Riemann Hypothesis is made.
 
+## Paper and archive
+
+- Paper: R. Mori, *Weil positivity on a window of width log 5: a formal proof in Lean 4*, preprint, 2026, Zenodo, [doi:10.5281/zenodo.23034001](https://doi.org/10.5281/zenodo.23034001) (all versions).
+- This code, release v1.0.0: Zenodo, [doi:10.5281/zenodo.23031523](https://doi.org/10.5281/zenodo.23031523).
+
 ## Theorems
 
 Let `L = log(5)/2`. The Challenge (`trusted/Challenge.lean`) states two theorems about the Weil quadratic form `W` of the nontrivial zeros of the Riemann zeta function, with the definitions of the Zeta23 library:
